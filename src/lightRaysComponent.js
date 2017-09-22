@@ -15,7 +15,7 @@ window.onload = function(){
   document.body.appendChild(canvas);
 
   !resize || window.addEventListener('resize', function(e){ w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
-  !mousemove || canvas.addEventListener('mousemove', function(e){
+  !mousemove || window.addEventListener('mousemove', function(e){
     trackmouse = true;
     mX = e.pageX-20; mY = e.pageY-20;
     per = { x: mX, y: mY };
