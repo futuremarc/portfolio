@@ -3,12 +3,12 @@ import React from 'react';
 const Title = (props) => {
 
   const {first, last} = props;
-  return <h1 className="title">{first} {last}</h1>
+  return <h1 className="title center-text">{first} {last}</h1>
 
 }
 
 const Subtitle = () => {
-  return <h3>Portfolio of Work</h3>
+  return <h3 className="subtitle center-text" >Portfolio of Work</h3>
 }
 
 
@@ -28,11 +28,23 @@ export class App extends React.Component{
       <div>
         <Title first="Marc" last="Abbey"/>
         <Subtitle/>
-        {
-          projects.map(item => {
-            return <p key={item}>{item}</p>
-          })
-        }
+        <div className="row">
+          {
+            projects.map(item => {
+              return (
+                <div key={item} className="square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div className="content">
+                        <div className="table">
+                            <div className="table-cell center-text">
+                                {item}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     )
   }
@@ -40,6 +52,7 @@ export class App extends React.Component{
 
 
 
+//will be deprecated in v16
 Title.propTypes = {
   first: React.PropTypes.string.isRequired,
   last: React.PropTypes.string.isRequired
