@@ -11,49 +11,88 @@ const Subtitle = () => {
   return <h3 className="subtitle center-text" >Portfolio of Work</h3>
 }
 
+export class Project extends React.Component{
+
+  constructor(props){
+    super(props);
+    //this.state={};
+    this.onProjectClick = this.onProjectClick.bind(this);
+
+  }
+
+  onProjectClick(e){
+    console.log('click',this.props.shortName);
+    //this.setState()
+  }
+
+
+  render(){
+
+    const {name, shortName} = this.props;
+
+    return (
+      <div onClick={this.onProjectClick} ref={(elt) => {this.activeProject = elt}} className={"square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 " + shortName}>
+          <div className="content">
+              <div className="table">
+                  <div className="table-cell center-text">
+                      {name}
+                  </div>
+              </div>
+          </div>
+      </div>
+    )
+
+  }
+
+}
+
 
 export class App extends React.Component{
 
   constructor(props){ //define states in constructor
     super(props);
+
     this.state = {
      projects:
       [
         {
           name: 'Twitch Plays Shakespeare',
-          key:'twitch'
+          shortName:'twitch'
         },
         {
           name:'Svrround',
-          key:'svrround'
+          shortName:'svrround'
         },
         {
           name:'Bedroom Jammer',
-          key:'bedroom'
+          shortName:'bedroom'
         },
         {
           name:'Canale Quattro',
-          key:'canale'
+          shortName:'canale'
         },
         {
           name:'Glitch the World',
-          key:'glitch'
+          shortName:'glitch'
         },
         {
           name:'Immigrater',
-          key:'immigrater'
+          shortName:'immigrater'
         },
         {
           name:'Haptec',
-          key:'haptec'
+          shortName:'haptec'
         },
         {
           name:'Passtime',
-          key:'passtime'
+          shortName:'passtime'
         }
       ]
     }
+
   }
+
+
   render(){
 
     const {projects} = this.state; //deconstruct
@@ -63,19 +102,10 @@ export class App extends React.Component{
         <Title first="Marc" last="Abbey"/>
         <Subtitle/>
         <div className="row">
+
           {
-            projects.map(item => {
-              return (
-                <div key={item.key} className={"square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 " + item.key}>
-                    <div className="content">
-                        <div className="table">
-                            <div className="table-cell center-text">
-                                {item.name}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              )
+            projects.map((item,index) =>{
+              return <Project name={item.name} shortName={item.shortName} key={index}/>
             })
           }
         </div>
