@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var isProd = process.env.NODE_ENV === 'production';
+var bootstrapEntryPoints = require('./webpack.bootstrap.config');
 
 var cssDev = ['style-loader', 'css-loader','sass-loader']
 var cssProd = ExtractTextPlugin.extract({
@@ -13,12 +14,15 @@ var cssProd = ExtractTextPlugin.extract({
 
 var cssConfig = isProd ? cssProd : cssDev;
 
+var bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev;
+
 module.exports = {
 
   context: path.resolve(__dirname, 'src'),
   entry: {
     app: './js/app.js',
-    contact: './js/contact.js'
+    contact: './js/contact.js',
+    bootstrap: bootstrapConfig
   },
   output:{
     path: path.resolve( __dirname, 'dist'),
@@ -44,7 +48,11 @@ module.exports = {
           'file-loader?name=[path][name].[ext]',
           'image-webpack-loader'
         ]
-      }
+      },
+      { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
+      { test: /\.(ttf|eot)$/, loader: 'file-loader' },
+      { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports-loader?jQuery=jquery' },
+
     ]
   },
     plugins: [
