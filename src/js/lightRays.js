@@ -9,6 +9,7 @@ var canvas, c, w, h,
 window.onload = function(){
 
   canvas = document.getElementById("canvas");
+  canvas.style.display = 'block';
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
   c = canvas.getContext('2d');

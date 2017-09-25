@@ -22,7 +22,7 @@ module.exports = {
 
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './js/app.js',
+    index: './js/index.js',
     contact: './js/contact.js',
     bootstrap: bootstrapConfig
   },
@@ -61,7 +61,7 @@ module.exports = {
   },
     plugins: [
       new HtmlWebpackPlugin({ //main page
-        title: 'Portfolio',
+        title: 'Marc Abbey',
         minify: {
           collapseWhitespace: true
         },
@@ -95,9 +95,7 @@ module.exports = {
       compress: true,
       hot: true,
       port: 9000,
-      stats:{
-        colors:true
-      },
+      stats:'errors-only',
       open:true
     }
 }
