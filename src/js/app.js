@@ -17,7 +17,41 @@ export class App extends React.Component{
   constructor(props){ //define states in constructor
     super(props);
     this.state = {
-     projects:  ['Twitch Plays Shakespeare', 'Svrround', 'Glitch the World', 'Immigrater', 'Bedroom Jammer', 'Haptec', 'Passtime']
+     projects:
+      [
+        {
+          name: 'Twitch Plays Shakespeare',
+          key:'twitch'
+        },
+        {
+          name:'Svrround',
+          key:'svrround'
+        },
+        {
+          name:'Bedroom Jammer',
+          key:'bedroom'
+        },
+        {
+          name:'Canale Quattro',
+          key:'canale'
+        },
+        {
+          name:'Glitch the World',
+          key:'glitch'
+        },
+        {
+          name:'Immigrater',
+          key:'immigrater'
+        },
+        {
+          name:'Haptec',
+          key:'haptec'
+        },
+        {
+          name:'Passtime',
+          key:'passtime'
+        }
+      ]
     }
   }
   render(){
@@ -32,11 +66,11 @@ export class App extends React.Component{
           {
             projects.map(item => {
               return (
-                <div key={item} className="square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <div key={item.key} className={"square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 " + item.key}>
                     <div className="content">
                         <div className="table">
                             <div className="table-cell center-text">
-                                {item}
+                                {item.name}
                             </div>
                         </div>
                     </div>

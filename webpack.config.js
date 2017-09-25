@@ -43,12 +43,12 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude:/node_modules/,
-        use: cssConfig,
+        loader: cssConfig,
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude:/node_modules/,
-        use: [
+        loader: [
           'file-loader?name=[path][name].[ext]',
           'image-webpack-loader'
         ]
