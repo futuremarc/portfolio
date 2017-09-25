@@ -8,11 +8,10 @@ var canvas, c, w, h,
 
 window.onload = function(){
 
-  canvas = document.createElement('canvas')
-    w = canvas.width = window.innerWidth;
+  canvas = document.getElementById("canvas");
+  w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
   c = canvas.getContext('2d');
-  document.body.appendChild(canvas);
 
   !resize || window.addEventListener('resize', function(e){ w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
   !mousemove || window.addEventListener('mousemove', function(e){
