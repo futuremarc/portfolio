@@ -17,25 +17,29 @@ export class Project extends React.Component{
     super(props);
     //this.state={};
     this.onProjectClick = this.onProjectClick.bind(this);
+    this.openProject = this.openProject.bind(this);
 
+  }
+
+  openProject(shortName){
+    console.log('openProject',shortName);
   }
 
   onProjectClick(e){
-    console.log('click',this.props.shortName);
-    //this.setState()
+    const {shortName} = this.props;
+    this.openProject(shortName);
   }
-
 
   render(){
 
-    const {name, shortName} = this.props;
+    const {title, shortName} = this.props;
 
     return (
-      <div onClick={this.onProjectClick} ref={(elt) => {this.activeProject = elt}} className={"square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 " + shortName}>
+      <div onClick={this.onProjectClick} className={"square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 " + shortName}>
           <div className="content">
               <div className="table">
                   <div className="table-cell center-text">
-                      {name}
+                      {title}
                   </div>
               </div>
           </div>
@@ -53,39 +57,88 @@ export class App extends React.Component{
     super(props);
 
     this.state = {
+
      projects:
       [
         {
-          name: 'Twitch Plays Shakespeare',
-          shortName:'twitch'
+          title: 'Twitch Plays Shakespeare',
+          shortName:'twitch',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Svrround',
-          shortName:'svrround'
+          title:'Svrround',
+          shortName:'svrround',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Bedroom Jammer',
-          shortName:'bedroom'
+          title:'Bedroom Jammer',
+          shortName:'bedroom',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Canale Quattro',
-          shortName:'canale'
+          title:'Canale Quattro',
+          shortName:'canale',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Glitch the World',
-          shortName:'glitch'
+          title:'Glitch the World',
+          shortName:'glitch',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Immigrater',
-          shortName:'immigrater'
+          title:'Immigrater',
+          shortName:'immigrater',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Haptec',
-          shortName:'haptec'
+          title:'Haptec',
+          shortName:'haptec',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         },
         {
-          name:'Passtime',
-          shortName:'passtime'
+          title:'Passtime',
+          shortName:'passtime',
+          description:'',
+          tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
+          role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
+          url:'',
+          media:[{type:'',url:''}],
+          press:[{title:'',url:''}]
         }
       ]
     }
@@ -105,7 +158,7 @@ export class App extends React.Component{
 
           {
             projects.map((item,index) =>{
-              return <Project name={item.name} shortName={item.shortName} key={index}/>
+              return <Project title={item.title} shortName={item.shortName} key={index}/>
             })
           }
         </div>
