@@ -1,3 +1,11 @@
+@import '../bootstrap/customizations.scss';
+
 html, body{
     background: url('/./../images/marc.png') center center no-repeat;
+}
+
+body{
+  h1{
+    color: $brand-primary;
+  }
 }
