@@ -1,9 +1,25 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom';
 export class Project extends React.Component{
 
   constructor(props){
     super(props);
+    this.removeItem = this.removeItem.bind(this);
+  }
+
+  removeItem(e) {
+    const {closePreview} = this.props;
+    closePreview();
+  }
+
+  componentDidMount() {
+
+    //this closes modal window, stops click from going to parent and setting state again
+    ReactDOM.findDOMNode(this).addEventListener('click', (event) => {
+      event.stopPropagation();
+      this.removeItem()
+    }, false);
+
   }
 
   render(){
@@ -32,7 +48,5 @@ export class Project extends React.Component{
 
       </div>
     )
-
   }
-
 }

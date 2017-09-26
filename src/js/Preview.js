@@ -9,17 +9,22 @@ export class Preview extends React.Component{
       clickedPreview: null
     }
     this.onPreviewClick = this.onPreviewClick.bind(this);
+    this.closePreview = this.closePreview.bind(this);
   }
 
 
-  onPreviewClick(e){
+  onPreviewClick(){
     const {shortName} = this.props;
     this.setState({clickedPreview: shortName});
   }
 
+  closePreview(e){
+    this.setState({clickedPreview: null});
+  }
+
   render(){
 
-    const {title, shortName, projects} = this.props;
+    const {title, shortName, projects, clickedPreview} = this.props;
 
     return (
       <div onClick={this.onPreviewClick} id={shortName} className="square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
@@ -30,10 +35,8 @@ export class Preview extends React.Component{
                   </div>
               </div>
           </div>
-          { this.state.clickedPreview ? <Project projects={projects} shortName={shortName} /> : null }
+          { this.state.clickedPreview ? <Project projects={projects} closePreview={this.closePreview} shortName={shortName} /> : null }
       </div>
     )
-
   }
-
 }
