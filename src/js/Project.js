@@ -16,19 +16,10 @@ export class Project extends React.Component{
 
   componentDidMount() {
     $('.project-modal').click(()=>{
-      $('.project-modal').remove();
+      this.removeItem()
     });
   }
 
-  // componentDidMount() {
-  //
-  //   //this closes modal window, stops click from going to parent and setting state again
-  //   ReactDOM.findDOMNode(this).addEventListener('click', (event) => {
-  //     event.stopPropagation();
-  //     this.removeItem()
-  //   }, false);
-  //
-  // }
 
   render(){
 
