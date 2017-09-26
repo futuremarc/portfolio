@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Portal from 'react-minimalist-portal';
+import $ from 'jquery';
 export class Project extends React.Component{
 
   constructor(props){
@@ -13,14 +15,20 @@ export class Project extends React.Component{
   }
 
   componentDidMount() {
-
-    //this closes modal window, stops click from going to parent and setting state again
-    ReactDOM.findDOMNode(this).addEventListener('click', (event) => {
-      event.stopPropagation();
-      this.removeItem()
-    }, false);
-
+    $('.project-modal').click(()=>{
+      $('.project-modal').remove();
+    });
   }
+
+  // componentDidMount() {
+  //
+  //   //this closes modal window, stops click from going to parent and setting state again
+  //   ReactDOM.findDOMNode(this).addEventListener('click', (event) => {
+  //     event.stopPropagation();
+  //     this.removeItem()
+  //   }, false);
+  //
+  // }
 
   render(){
 
@@ -28,25 +36,28 @@ export class Project extends React.Component{
     const project = projects[shortName];
 
     return (
-      <div className="project-modal">
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
+      <Portal>
 
-        {
-          project.tech.map((item,index) => {
-            return <span key={index} className="tag tech">{item}</span>
-          })
-        }
+        <div className="project-modal">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
 
-        {
-          project.role.map((item,index) => {
-            return <span key={index} className="tag role">{item}</span>
-          })
-        }
+          {
+            project.tech.map((item,index) => {
+              return <span key={index} className="tag tech">{item}</span>
+            })
+          }
 
-        <a href={project.url}>{project.url}</a>
+          {
+            project.role.map((item,index) => {
+              return <span key={index} className="tag role">{item}</span>
+            })
+          }
 
-      </div>
+          <a href={project.url}>{project.url}</a>
+
+        </div>
+      </Portal>
     )
   }
 }
