@@ -1,4 +1,5 @@
 import React from 'react';
+import {Preview} from './Preview';
 
 const Title = (props) => {
 
@@ -11,44 +12,6 @@ const Subtitle = () => {
   return <h3 className="subtitle center-text" >Portfolio of Work</h3>
 }
 
-export class Project extends React.Component{
-
-  constructor(props){
-    super(props);
-    //this.state={};
-    this.onProjectClick = this.onProjectClick.bind(this);
-    this.openProject = this.openProject.bind(this);
-
-  }
-
-  openProject(shortName){
-    console.log('openProject',shortName);
-  }
-
-  onProjectClick(e){
-    const {shortName} = this.props;
-    this.openProject(shortName);
-  }
-
-  render(){
-
-    const {title, shortName} = this.props;
-
-    return (
-      <div onClick={this.onProjectClick} className={"square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 " + shortName}>
-          <div className="content">
-              <div className="table">
-                  <div className="table-cell center-text">
-                      {title}
-                  </div>
-              </div>
-          </div>
-      </div>
-    )
-
-  }
-
-}
 
 
 export class App extends React.Component{
@@ -57,20 +20,19 @@ export class App extends React.Component{
     super(props);
 
     this.state = {
-
      projects:
-      [
-        {
+      {
+        twitch : {
           title: 'Twitch Plays Shakespeare',
           shortName:'twitch',
-          description:'',
+          description:'Twitch plays Shakespeare was an app developed for Google Research',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS', 'Mocha', 'Gulp', 'Express.js', 'Webpack', 'Handlebars', 'Pug/Jade', 'SASS','Arduino', 'Circuitry'],
           role:['Front-end','Back-end','Full-stack','Fabrication','Design','Concept','Sensors','Founder','Product','Business'],
           url:'',
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        svrround : {
           title:'Svrround',
           shortName:'svrround',
           description:'',
@@ -80,7 +42,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        bedroom : {
           title:'Bedroom Jammer',
           shortName:'bedroom',
           description:'',
@@ -90,7 +52,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        canale : {
           title:'Canale Quattro',
           shortName:'canale',
           description:'',
@@ -100,7 +62,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        glitch : {
           title:'Glitch the World',
           shortName:'glitch',
           description:'',
@@ -110,7 +72,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        immigrater : {
           title:'Immigrater',
           shortName:'immigrater',
           description:'',
@@ -120,7 +82,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        haptec : {
           title:'Haptec',
           shortName:'haptec',
           description:'',
@@ -130,7 +92,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         },
-        {
+        passtime : {
           title:'Passtime',
           shortName:'passtime',
           description:'',
@@ -140,7 +102,7 @@ export class App extends React.Component{
           media:[{type:'',url:''}],
           press:[{title:'',url:''}]
         }
-      ]
+      }
     }
 
   }
@@ -148,7 +110,7 @@ export class App extends React.Component{
 
   render(){
 
-    const {projects} = this.state; //deconstruct
+    const {projects} = this.state;
 
     return (
       <div>
@@ -157,20 +119,12 @@ export class App extends React.Component{
         <div className="row">
 
           {
-            projects.map((item,index) =>{
-              return <Project title={item.title} shortName={item.shortName} key={index}/>
+            Object.keys(projects).map((item,index) => {
+              return <Preview projects={projects} title={projects[item].title} shortName={projects[item].shortName} key={index}/>
             })
           }
         </div>
       </div>
     )
   }
-}
-
-
-
-//will be deprecated in v16
-Title.propTypes = {
-  first: React.PropTypes.string.isRequired,
-  last: React.PropTypes.string.isRequired
 }
