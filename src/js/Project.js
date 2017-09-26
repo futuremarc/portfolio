@@ -6,12 +6,13 @@ export class Project extends React.Component{
 
   constructor(props){
     super(props);
-    this.removeItem = this.removeItem.bind(this);
+    this.onCloseClick = this.onCloseClick.bind(this);
   }
 
-  removeItem(e) {
-    const {closePreview} = this.props;
-    closePreview();
+  onCloseClick(e) {
+    e.preventDefault();
+    const {closeProject} = this.props;
+    closeProject();
   }
 
   componentDidMount() {
@@ -29,24 +30,27 @@ export class Project extends React.Component{
     return (
       <Portal>
 
-        <div className="project-modal">
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
+        <div className="modal-overlay">
+          <div className="modal">
+            <a href="#" onClick={this.onCloseClick} className="close-modal">&times;</a>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
 
-          {
-            project.tech.map((item,index) => {
-              return <span key={index} className="tag tech">{item}</span>
-            })
-          }
+            {
+              project.tech.map((item,index) => {
+                return <span key={index} className="tag tech">{item}</span>
+              })
+            }
+            <br/>
+            <br/>
+            {
+              project.role.map((item,index) => {
+                return <span key={index} className="tag role">{item}</span>
+              })
+            }
 
-          {
-            project.role.map((item,index) => {
-              return <span key={index} className="tag role">{item}</span>
-            })
-          }
-
-          <a href={project.url}>{project.url}</a>
-
+            <a href={project.url}>{project.url}</a>
+          </div>
         </div>
       </Portal>
     )

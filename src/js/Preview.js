@@ -9,7 +9,7 @@ export class Preview extends React.Component{
       clickedPreview: null
     }
     this.onPreviewClick = this.onPreviewClick.bind(this);
-    this.closePreview = this.closePreview.bind(this);
+    this.closeProject = this.closeProject.bind(this);
   }
 
 
@@ -18,7 +18,7 @@ export class Preview extends React.Component{
     this.setState({clickedPreview: shortName});
   }
 
-  closePreview(e){
+  closeProject(e){
     this.setState({clickedPreview: null});
   }
 
@@ -35,7 +35,7 @@ export class Preview extends React.Component{
                   </div>
               </div>
           </div>
-          { this.state.clickedPreview ? <Project projects={projects} closePreview={this.closePreview} shortName={shortName} /> : null }
+          { this.state.clickedPreview ? <Project projects={projects} closeProject={this.closeProject} shortName={shortName} /> : null }
       </div>
     )
   }
