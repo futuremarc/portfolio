@@ -1,15 +1,29 @@
-var canvas, c, w, h,
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {App} from './App';
+
+
+function startReactApp(){
+  ReactDOM.render(
+    <App />,
+    document.getElementById('react-app')
+  )
+}
+
+
+var canvas, c, w, h, welcome,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
     mousemove = true,
     per = { x: 0, y: 0 },
-    mtn, trackmouse = false;
+    mtn, trackmouse = true;
 
 window.onload = function(){
 
   canvas = document.getElementById("canvas");
-  canvas.style.display = 'block';
+  welcome = document.getElementById("welcome-bg");
+
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
   c = canvas.getContext('2d');
@@ -27,6 +41,10 @@ window.onload = function(){
   per = { x: w/2, y: h/2, step: 1 }
     mtn = new Mountains(300,"10");
   window.setInterval(animate,17);
+
+  canvas.style.display = 'flex';
+  welcome.style.display = 'flex';
+  startReactApp();
 }
 
   function newGradient(gradient){

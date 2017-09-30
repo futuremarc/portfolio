@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Portal from 'react-minimalist-portal';
 import ReactHtmlParser from 'react-html-parser';
 import {Carousel} from './Carousel.js'
-
 import $ from 'jquery';
 
 export class Project extends React.Component{
@@ -15,7 +14,8 @@ export class Project extends React.Component{
 
     this.state = {
       carouselIndex : 0,
-      media: project.media
+      media: project.media,
+      carouselDirection: 'left'
     };
     this.onCloseClick = this.onCloseClick.bind(this);
     this.onLeftArrowClick = this.onLeftArrowClick.bind(this);
@@ -30,13 +30,15 @@ export class Project extends React.Component{
 
   onLeftArrowClick(){
     this.setState({
-      carouselIndex: Math.abs(-- this.state.carouselIndex % this.state.media.length)
+      carouselIndex: Math.abs(-- this.state.carouselIndex % this.state.media.length),
+      carouselDirection: 'left'
      });
   }
 
   onRightArrowClick(){
     this.setState({
-      carouselIndex: ++ this.state.carouselIndex % this.state.media.length
+      carouselIndex: ++ this.state.carouselIndex % this.state.media.length,
+      carouselDirection: 'right'
     });
   }
 
@@ -92,7 +94,7 @@ export class Project extends React.Component{
 
                 <div className="media-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
 
-                  <Carousel carouselIndex={this.state.carouselIndex} media={this.state.media}/>
+                  <Carousel carouselIndex={this.state.carouselIndex} carouselDirection={this.state.carouselDirection} media={this.state.media}/>
 
                   <div className="left-arrow" onClick={this.onLeftArrowClick}></div>
                   <div className="right-arrow" onClick={this.onRightArrowClick}></div>

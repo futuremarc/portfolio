@@ -29,7 +29,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'Express.js', 'MongoDB','Handlebars','Gulp', 'Pug/Jade', 'SASS'],
           role:['Front-end','Back-end','Visual Design','Concept','Founder','Product','Business'],
           site:{url:'https://svrround.com',alive:true},
-          media:[{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/space-girl1.png'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/MspImczjQ5Q'},{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/space-girl1.png'}],
           press:[{title:'',url:''}]
         },
         passtime : {
@@ -168,8 +168,7 @@ export class App extends React.Component{
 
     return (
       <div>
-        <Title first="Marc" last="Abbey"/>
-        <Subtitle/>
+
         <div className="row">
 
           {
