@@ -18,6 +18,7 @@
     "babel-preset-react": "^6.24.1",
     "bootstrap-loader": "^2.2.0",
     "bootstrap-sass": "^3.3.7",
+    "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
@@ -30,9 +31,12 @@
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^15.6.1",
+    "react-html-parser": "^2.0.0",
     "react-minimalist-portal": "^2.0.0",
-    "react-portals": "^1.1.2",
+    "react-motion": "^0.5.1",
+    "react-transition-group": "^2.2.0",
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
@@ -41,6 +45,7 @@
     "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "jquery": "^3.2.1"
   }
 }
