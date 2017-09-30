@@ -47,16 +47,16 @@ export class Project extends React.Component{
 
       <Portal>
           <div key="overlay" className="modal-overlay">
-            <div className="modal fadeIn">
+            <div className="modal fadeIn table">
 
               <a href="#" onClick={this.onCloseClick} className="close-modal">&times;</a>
               <div className="row project-content">
                 <div className="details-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                  <h3>{project.title}</h3>
+                  <h2 class="project-title">{project.title}</h2>
                   <p>{ ReactHtmlParser(project.description) }</p>
                   <br/>
                   <br/>
-                  <h5>Tech</h5>
+                  <h3>Tech</h3>
 
                   {
                     project.tech.map((item,index) => {
@@ -65,7 +65,7 @@ export class Project extends React.Component{
                   }
                   <br/>
                   <br/>
-                  <h5>Roles</h5>
+                  <h3>Roles</h3>
                   {
                     project.role.map((item,index) => {
                       return <span key={index} className="tag role">{item}</span>
