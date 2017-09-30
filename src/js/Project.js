@@ -18,28 +18,13 @@ export class Project extends React.Component{
       carouselDirection: 'left'
     };
     this.onCloseClick = this.onCloseClick.bind(this);
-    this.onLeftArrowClick = this.onLeftArrowClick.bind(this);
-    this.onRightArrowClick = this.onRightArrowClick.bind(this);
+
   }
 
   onCloseClick(e) {
     e.preventDefault();
     const {closeProject} = this.props;
     closeProject();
-  }
-
-  onLeftArrowClick(){
-    this.setState({
-      carouselIndex: Math.abs(-- this.state.carouselIndex % this.state.media.length),
-      carouselDirection: 'left'
-     });
-  }
-
-  onRightArrowClick(){
-    this.setState({
-      carouselIndex: ++ this.state.carouselIndex % this.state.media.length,
-      carouselDirection: 'right'
-    });
   }
 
   componentDidMount() {
@@ -94,10 +79,8 @@ export class Project extends React.Component{
 
                 <div className="media-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
 
-                  <Carousel carouselIndex={this.state.carouselIndex} carouselDirection={this.state.carouselDirection} media={this.state.media}/>
+                  <Carousel className="carousel" carouselIndex={this.state.carouselIndex} carouselDirection={this.state.carouselDirection} media={this.state.media}/>
 
-                  <div className="left-arrow" onClick={this.onLeftArrowClick}></div>
-                  <div className="right-arrow" onClick={this.onRightArrowClick}></div>
                 </div>
               </div>
             </div>

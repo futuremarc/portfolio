@@ -33,32 +33,28 @@ export class Carousel extends React.Component{
     };
 
     return(
-
+      <div className="carousel">
         <Slider {...settings}>
-          <div><h3>1</h3></div>
-          <div><h3>2</h3></div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
-          <div><h3>5</h3></div>
-          <div><h3>6</h3></div>
+
+        {
+          media.map((item,index) => {
+            if (item.type === 'image'){
+                return <div key={index} ><img src={item.url} className="project-img" ></img></div>
+            }else if (item.type === 'youtube'){
+                return <div key={index}> <iframe src={item.url} className="project-yt" frameBorder={0}></iframe></div>
+            }
+          })
+        }
+
         </Slider>
-
-
+      </div>
 
     );
   }
 }
 
 
-// {
-//   media.map((item,index) => {
-//     if (item.type === 'image'){
-//         return <img src={item.url} key={index} className="project-item" ></img>
-//     }else if (item.type === 'youtube'){
-//         return <iframe src={item.url} key={index} className="project-item" frameBorder={0}></iframe>
-//     }
-//   })
-// }
+
 
 
 
