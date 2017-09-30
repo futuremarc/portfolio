@@ -52,7 +52,7 @@ export class Project extends React.Component{
               <a href="#" onClick={this.onCloseClick} className="close-modal">&times;</a>
               <div className="row project-content">
                 <div className="details-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                  <h2 class="project-title">{project.title}</h2>
+                  <h2 className="project-title">{project.title}</h2>
                   <p>{ ReactHtmlParser(project.description) }</p>
                   <br/>
                   <br/>

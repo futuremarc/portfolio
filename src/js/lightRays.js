@@ -28,7 +28,11 @@ window.onload = function(){
   h = canvas.height = window.innerHeight;
   c = canvas.getContext('2d');
 
-  !resize || window.addEventListener('resize', function(e){ w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+  !resize || window.addEventListener('resize', function(e){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    mtn = new Mountains(300,"10");
+   });
   !mousemove || window.addEventListener('mousemove', function(e){
     trackmouse = true;
     mX = e.pageX-20; mY = e.pageY-20;
