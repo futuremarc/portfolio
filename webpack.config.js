@@ -14,6 +14,7 @@ const cssProd = ExtractTextPlugin.extract({
   publicPath: '/dist'
 })
 
+
 const cssConfig = isProd ? cssProd : cssDev;
 
 const bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev;
@@ -95,7 +96,7 @@ module.exports = {
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
       hot: true,
-      port: 9001,
+      port: 9002,
       stats:'errors-only',
       open:true
     }

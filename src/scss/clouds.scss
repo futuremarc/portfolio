@@ -91,22 +91,22 @@
   transform: scale(0.8);
   opacity: 0.8;
 
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -webkit-animation: moveclouds 30s linear infinite;
+  -moz-animation: moveclouds 30s linear infinite;
+  -o-animation: moveclouds 30s linear infinite;
 }
 
 @-webkit-keyframes moveclouds {
-  0% {margin-left: 1600px;}
-  100% {margin-left: -1000px;}
+  0% {margin-left: 110vw;}
+  100% {margin-left: -40vw;}
 }
 @-moz-keyframes moveclouds {
-  0% {margin-left: 1600px;}
-  100% {margin-left: -1000px;}
+  0% {margin-left: 110vw;}
+  100% {margin-left: -40vw;}
 }
 @-o-keyframes moveclouds {
-  0% {margin-left: 1600px;}
-  100% {margin-left: -1000px;}
+  0% {margin-left: 110vw;}
+  100% {margin-left: -40vw;}
 }
 
 .shadow {

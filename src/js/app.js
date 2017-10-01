@@ -117,7 +117,7 @@ export class App extends React.Component{
           press:[{title:'',url:''}]
         },
         magic : {
-          title:'Magic is real',
+          title:'Magic is Real',
           shortName:'magic',
           description:'A performance piece showcasing a 7 episode interactive music piece that animates a story of a girl who finds many pieces',
           tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],

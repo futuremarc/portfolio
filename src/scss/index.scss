@@ -1,7 +1,10 @@
 @import '../bootstrap/customizations.scss';
-@import '/slick/slick.scss';
-@import '/slick/slick-theme.scss';
+@import './slick/slick.scss';
+@import './slick/slick-theme.scss';
 
+html, body{
+  overflow-x: hidden;
+}
 
 #welcome-bg{
   display:none;
@@ -17,7 +20,7 @@
 
     font-size:8vw;
     color:black;
-    top:12vw;
+    top:9vw;
     padding:0;
     position:absolute;
 
