@@ -51,7 +51,7 @@ module.exports = {
         exclude:/node_modules/,
         loader: [
           'file-loader?name=[path][name].[ext]',
-          'image-webpack-loader'
+          'improved-image-webpack-loader'
         ]
       },
 

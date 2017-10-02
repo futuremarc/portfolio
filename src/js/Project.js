@@ -47,40 +47,42 @@ export class Project extends React.Component{
 
       <Portal>
           <div key="overlay" className="modal-overlay">
-            <div className="modal fadeIn table">
+            <div className="modal fadeIn">
 
               <a href="#" onClick={this.onCloseClick} className="close-modal">&times;</a>
-              <div className="row project-content">
-                <div className="details-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
-                  <h2 className="project-title">{project.title}</h2>
-                  <p>{ ReactHtmlParser(project.description) }</p>
-                  <br/>
-                  <br/>
-                  <h3>Tech</h3>
+              <div className="container-fluid">
+                <div className="row project-content">
+                  <div className="details-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
+                    <h2 className="project-title">{project.title}</h2>
+                    <p>{ ReactHtmlParser(project.description) }</p>
+                    <br/>
+                    <br/>
+                    <h3>Tech</h3>
 
-                  {
-                    project.tech.map((item,index) => {
-                      return <span key={index} className="tag tech">{item}</span>
-                    })
-                  }
-                  <br/>
-                  <br/>
-                  <h3>Roles</h3>
-                  {
-                    project.role.map((item,index) => {
-                      return <span key={index} className="tag role">{item}</span>
-                    })
-                  }
-                  <div>
+                    {
+                      project.tech.map((item,index) => {
+                        return <span key={index} className="tag tech">{item}</span>
+                      })
+                    }
+                    <br/>
+                    <br/>
+                    <h3>Roles</h3>
+                    {
+                      project.role.map((item,index) => {
+                        return <span key={index} className="tag role">{item}</span>
+                      })
+                    }
+                    <div>
+                    </div>
+
+                    <a href={project.url}>{project.url}</a>
                   </div>
 
-                  <a href={project.url}>{project.url}</a>
-                </div>
+                  <div className="media-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
 
-                <div className="media-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
+                    <Carousel className="carousel" carouselIndex={this.state.carouselIndex} carouselDirection={this.state.carouselDirection} media={this.state.media}/>
 
-                  <Carousel className="carousel" carouselIndex={this.state.carouselIndex} carouselDirection={this.state.carouselDirection} media={this.state.media}/>
-
+                  </div>
                 </div>
               </div>
             </div>

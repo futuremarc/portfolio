@@ -88,9 +88,9 @@ function animate(){
       r1: 0,
       r2: w,
       stops: [
-        { s: 0, c: "rgba("+ (h-mY) +","+ (h-mY) +","+ (h-mY) +",0.5)" },
-        { s: 0.05, c: "rgba("+ (h-mY) +","+ (h-mY-128) +",128,0.5)" },
-        { s: 1, c: "rgba(0,"+ (h-mY-128) +","+ (h-mY) +",0.5)" }
+        { s: 0, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +",0.5)" },
+        { s: 0.05, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY-128)) +",128,0.5)" },
+        { s: 1, c: "rgba(0,"+ Math.floor((h-mY-128)) +","+ Math.floor((h-mY)) +",0.5)" }
 
       ]
     }
