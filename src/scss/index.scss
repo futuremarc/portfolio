@@ -2,6 +2,9 @@
 @import './slick/slick.scss';
 @import './slick/slick-theme.scss';
 
+html,body{
+  overflow-x: hidden;
+}
 
 #welcome-bg{
   display:none;
@@ -278,7 +281,11 @@ li{
 
   .details-col{
      padding:2em;
-     margin:30px 0px 0px 0px;
+
+     @media (min-width: 60em) {
+       margin:30px 0px 0px 0px;
+     }
+     
 
      h2{
        margin-top:0;
@@ -293,8 +300,10 @@ li{
     height: auto;
     min-height:400px;
     padding: 2em;
-    margin:55px 0px 35px 0px;
 
+    @media (min-width: 60em) {
+      margin:55px 0px 35px 0px;
+    }
 
   }
 }

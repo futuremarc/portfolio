@@ -1,13 +1,13 @@
 
 #clouds{
   padding: 10% 0;
-  z-index: 1000;
+  z-index: 1;
   position:absolute;
   pointer-events:none;
 }
 
 .cloud {
-  z-index: 1000;
+  z-index: 1;
   width: 200px; height: 60px;
   background: #fff;
 
