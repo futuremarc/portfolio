@@ -173,9 +173,9 @@ li{
 }
 
 #haptec{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/haptec1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/haptec1.png');
     &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/haptec1.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/haptec1.png');
     }
 }
 
@@ -275,13 +275,10 @@ li{
 
 
 .project-content{
-  display: table;
 
   .details-col{
-     display: table-cell;
      padding:2em;
      margin:30px 0px 0px 0px;
-     width:100%;
 
      h2{
        margin-top:0;
@@ -293,12 +290,11 @@ li{
   }
 
   .media-col{
-    display: table-cell;
     height: auto;
-    width:100%;
     min-height:400px;
     padding: 2em;
     margin:55px 0px 35px 0px;
+
 
   }
 }
@@ -378,6 +374,6 @@ li{
     text-align: center;
     text-decoration: none;
     top: 0;
-    z-index: 5;
+    z-index: 1;
   }
 }

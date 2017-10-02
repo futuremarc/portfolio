@@ -44,7 +44,7 @@ window.onload = function(){
 
   per = { x: w/2, y: h/2, step: 1 }
     mtn = new Mountains(300,"10");
-  window.setInterval(animate,17);
+  window.setInterval(animate,60);
 
   canvas.style.display = 'flex';
   welcome.style.display = 'flex';
