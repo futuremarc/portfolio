@@ -24,17 +24,14 @@ export class Preview extends React.Component{
 
   render(){
 
-    const {title, shortName, projects, isActive} = this.props;
+    const {title, shortName, projects, shortDescription, isActive} = this.props;
     const project = projects[shortName];
 
     return (
       <div onClick={this.onPreviewClick} id={shortName} className="square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
           <div className="content">
-              <div className="table">
-                  <div className="table-cell center-text">
-                      {title}
-                  </div>
-              </div>
+              <div className="project-title">{title}</div>
+              <div className="short-description">{shortDescription}</div>
           </div>
           { this.state.isActive ? <Project project={project} closeProject={this.closeProject} shortName={shortName} /> : null }
       </div>

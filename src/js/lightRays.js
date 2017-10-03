@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './App';
+import $ from 'jquery';
 
 
 function startReactApp(){
@@ -10,8 +11,20 @@ function startReactApp(){
   )
 }
 
+function setOnScroll(){
+  $(window).on('scroll', (e)=>{
+    if ($(window).scrollTop() > window.innerHeight/3.5 && !disableAnimate){
+      clearTimeout(animateInterval);
+      disableAnimate = true;
+    }else if ($(window).scrollTop() < window.innerHeight/3.5 && disableAnimate){
+      animateInterval = window.setInterval(animate,17);
+      disableAnimate = false;
+    }
+  })
+}
 
-var canvas, c, w, h, welcome,
+
+var canvas, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
@@ -31,23 +44,27 @@ window.onload = function(){
   !resize || window.addEventListener('resize', function(e){
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
-    mtn = new Mountains(300,"10");
+    mtn = new Mountains(100,"10");
+    if (disableAnimate) animate();
    });
   !mousemove || window.addEventListener('mousemove', function(e){
+
     trackmouse = true;
     mX = e.pageX-20; mY = e.pageY-20;
     per = { x: mX, y: mY };
+    //animate()
   });
 
   mX = w/2;
   mY = w/2;
 
   per = { x: w/2, y: h/2, step: 1 }
-    mtn = new Mountains(300,"10");
-  window.setInterval(animate,17);
+    mtn = new Mountains(100,"10");
+  animateInterval = window.setInterval(animate,17);
 
   canvas.style.display = 'flex';
   welcome.style.display = 'flex';
+  setOnScroll();
   startReactApp();
 }
 
@@ -70,6 +87,7 @@ window.onload = function(){
   }
 
 function animate(){
+
   if(!trackmouse){
     per.x = mX = w/2 + Math.round(Math.cos(per.step)*w/2);
     per.y = mY = h/2 + Math.round(Math.sin(per.step)*h/2);
@@ -97,6 +115,7 @@ function animate(){
   );
   c.fillRect(0,0,w,h);
   mtn.draw();
+
 }
 
 function Mountains(peaks,seed){
@@ -114,7 +133,7 @@ function Mountains(peaks,seed){
   this.draw = function(){
     c.save();
     //c.fillStyle = "rgba(20,20,20,1)";
-    c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(0,0,0,1)"},{s:0, c:"rgba(80,80,80,1)"}]});
+    c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(50,100,20,.4)"},{s:0, c:"rgba(200,80,200,1)"}]});
     c.beginPath();
     c.moveTo(points[0].x, h/2-points[0].y);
     for(var p = 1; p < points.length; p++){
