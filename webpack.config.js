@@ -10,7 +10,7 @@ const cssDev = ['style-loader', 'css-loader','sass-loader']
 const cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
   use: ['css-loader','postcss-loader','sass-loader'],
-  publicPath: '/dist'
+  publicPath: '/dist/'
 })
 
 
@@ -100,7 +100,7 @@ module.exports = {
       }),
       new ExtractTextPlugin({
         filename: '/css/[name].css',
-        disable: !isProd,
+        disable: false,
         allChunks: true
     }),
       new webpack.HotModuleReplacementPlugin(), //hot module replacement
