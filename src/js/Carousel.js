@@ -9,20 +9,9 @@ export class Carousel extends React.Component{
     super(props);
   }
 
-  componentDidMount() {
-    var firstItem = $('.project-item')[0]
-    $(firstItem).show();
-
-    $('.project-item').click(()=>{
-
-    })
-  }
-
   render(){
 
-    const {carouselIndex, media, carouselDirection} = this.props;
-    const currentSlide = media[carouselIndex];
-    const transitionName = "carousel-" + carouselDirection;
+    const {media} = this.props;
 
     const settings = {
       dots: true,
@@ -52,14 +41,3 @@ export class Carousel extends React.Component{
     );
   }
 }
-
-
-
-
-
-
-
-// {
-//   currentSlide.type === 'image' ? <img src={currentSlide.url} key={currentSlide.url}></img>
-//   : <iframe src={currentSlide.url} key={currentSlide.url} frameBorder={0}></iframe>
-// }

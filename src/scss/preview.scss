@@ -1,0 +1,144 @@
+
+.preview-title{
+  font-weight:600;
+}
+
+.preview-description{
+  font-size:.75em;
+  font-style: italic;
+}
+
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    background-color:#1E1E1E;
+    overflow:hidden;
+    &:hover{
+      cursor:pointer;
+    }
+}
+
+/*  For responsive images */
+
+.preview-content .rs{
+    width:auto;
+    height:auto;
+    max-height:90%;
+    max-width:100%;
+}
+
+
+/*  For responsive images as background */
+
+.bg{
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    color:#fff;
+}
+
+
+
+.preview-content {
+    position:absolute;
+    height:90%; /* = 100% - 2*5% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 5%;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+
+#twitch{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/twitch2.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/twitch-gif.gif');
+    }
+}
+
+#bedroom{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/bedroom-jammer2.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/bedroom-jammer-gif.gif');
+    }
+}
+
+#glitch{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/glitch-the-world1.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glitch-the-world-gif.gif');
+    }
+}
+
+
+#svrround{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/svrround1.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/svrround-gif3.gif');
+    }
+}
+
+#canale{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/canale-quattro1.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/canale-quattro-gif.gif');
+    }
+}
+
+#magic{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/magic-is-real1.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/magic-is-real1.gif');
+    }
+}
+
+#haptec{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/haptec1.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/haptec-gif.gif');
+    }
+}
+
+#passtime{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/passtime1.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/passtime-gif.gif');
+    }
+}
+
+#immigrater{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/immigrater1.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/immigrater-gif.gif');
+    }
+}
+
+#glove{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/glove-phone1.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glove-phone-gif.gif');
+    }
+}
+
+#dimensions{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/dimensions1.jpg');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/dimensions-gif.gif');
+    }
+}
+
+#emoji{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/emoji1.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/emoji-gif.gif');
+    }
+}
+
+#space{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/space-girl1.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/space-girl1.png');
+    }
+}

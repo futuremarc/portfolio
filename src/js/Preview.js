@@ -29,9 +29,9 @@ export class Preview extends React.Component{
 
     return (
       <div onClick={this.onPreviewClick} id={shortName} className="square bg col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
-          <div className="content">
-              <div className="project-title">{title}</div>
-              <div className="short-description">{shortDescription}</div>
+          <div className="preview-content">
+              <div className="preview-title">{title}</div>
+              <div className="preview-description">{shortDescription}</div>
           </div>
           { this.state.isActive ? <Project project={project} closeProject={this.closeProject} shortName={shortName} /> : null }
       </div>

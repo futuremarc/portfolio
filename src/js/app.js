@@ -1,5 +1,6 @@
 import React from 'react';
 import {Preview} from './Preview';
+import $ from 'jquery';
 
 const Title = (props) => {
 
@@ -11,7 +12,6 @@ const Title = (props) => {
 const Subtitle = () => {
   return <h3 className="subtitle center-text" >Portfolio of Work</h3>
 }
-
 
 
 export class App extends React.Component{
@@ -152,7 +152,7 @@ export class App extends React.Component{
         emoji : {
           title:'Emoji Dance',
           shortName:'emoji',
-          shortDescription:'interactive music web app',
+          shortDescription:'interactive music webpage',
           description:'A website to discover and save your favorite Japanese Emoji all while watch. The Emoji join the party and dance along to the song.',
           tech:[ 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Design','Concept'],

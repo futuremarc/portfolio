@@ -13,9 +13,7 @@ export class Project extends React.Component{
     const {project} = this.props;
 
     this.state = {
-      carouselIndex : 0,
-      media: project.media,
-      carouselDirection: 'left'
+      media: project.media
     };
     this.onCloseClick = this.onCloseClick.bind(this);
 
@@ -28,14 +26,12 @@ export class Project extends React.Component{
   }
 
   componentDidMount() {
-    document.body.style.overflow = "hidden";
-    $('.project-modal').click(()=>{
-      this.removeItem()
-    });
-  }
 
-  componentWillUnmount() {
-    document.body.style.overflow = "scroll";
+    $( '.modal' ).on( 'mousewheel', function ( e ) {
+      let event = e.originalEvent, d = event.wheelDelta || -event.detail;
+      this.scrollTop += ( d < 0 ? 1 : -1 ) * 30;
+      e.preventDefault();
+    });
   }
 
 
@@ -49,7 +45,7 @@ export class Project extends React.Component{
           <div key="overlay" className="modal-overlay">
             <div className="modal fadeIn">
 
-              <a href="#" onClick={this.onCloseClick} className="close-modal">&times;</a>
+              <a href="#" onClick={this.onCloseClick} className="close-modal"><span className="glyphicon glyphicon-remove"></span></a>
               <div className="container-fluid">
                 <div className="row project-content">
                   <div className="details-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
@@ -80,7 +76,7 @@ export class Project extends React.Component{
 
                   <div className="media-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
 
-                    <Carousel className="carousel" carouselIndex={this.state.carouselIndex} carouselDirection={this.state.carouselDirection} media={this.state.media}/>
+                    <Carousel className="carousel" media={this.state.media}/>
 
                   </div>
                 </div>
@@ -93,18 +89,3 @@ export class Project extends React.Component{
     )
   }
 }
-
-// {
-//   project.media[0].type === 'image' ? <img src={project.media[0].url} key={project.media[0].url} className="project-img"></img>
-//   : <iframe src={project.media[0].url} key={project.media[0].url} frameBorder={0} className="project-yt"></iframe>
-// }
-
-// {
-//   project.media.map((item,index) => {
-//     if (item.type === 'image'){
-//         return <img src={item.url} key={index} className="project-img"></img>
-//     }else if (item.type === 'youtube'){
-//         return <iframe src={item.url} key={index} frameBorder={0} className="project-yt"></iframe>
-//     }
-//   })
-// }

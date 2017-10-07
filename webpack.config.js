@@ -6,11 +6,10 @@ const isProd = process.env.NODE_ENV === 'production';
 const bootstrapEntryPoints = require('./webpack.bootstrap.config');
 const glob = require('glob-all');
 const PurifyCSSPlugin = require('purifycss-webpack');
-
 const cssDev = ['style-loader', 'css-loader','sass-loader']
 const cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
-  use: ['css-loader','sass-loader'],
+  use: ['css-loader','postcss-loader','sass-loader'],
   publicPath: '/dist'
 })
 
@@ -50,8 +49,8 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude:/node_modules/,
         loader: [
-          'file-loader?name=[path][name].[ext]',
-          'improved-image-webpack-loader'
+          'file-loader?name=images/[name].[ext]',
+          'image-webpack-loader'
         ]
       },
 
@@ -106,12 +105,12 @@ module.exports = {
     }),
       new webpack.HotModuleReplacementPlugin(), //hot module replacement
       new webpack.NamedModulesPlugin(), //hot module replacement
-      new PurifyCSSPlugin({
-        paths: glob.sync([
-          path.join(__dirname, 'src/*.html'),
-          path.join(__dirname, 'src/js/*.js')
-        ])
-      }) //only compile css associated in these files!... cool
+      // new PurifyCSSPlugin({
+      //   paths: glob.sync([
+      //     path.join(__dirname, 'src/*.html'),
+      //     path.join(__dirname, 'src/js/*.js')
+      //   ])
+      // }) //only compile css associated in these files!... cool
     ],
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
