@@ -14,7 +14,9 @@ const cssProd = ExtractTextPlugin.extract({
       loader: 'string-replace-loader',
       query: {
         search: '/../images',
-        replace: './images'
+        replace: './images',
+        flags: 'i',
+        strict: true
       }
     },
     {
@@ -89,12 +91,14 @@ module.exports = {
         loader: 'imports-loader?jQuery=jquery'
       },
       {
-        test: /\.(js|scss)$/i,
+        test: /\.(js|scss)$/,
         exclude:/node_modules/,
         loader: 'string-replace-loader',
         query: {
           search: '/../images',
-          replace: './images'
+          replace: './images',
+          flags: 'i',
+          strict: true
         }
       }
 
