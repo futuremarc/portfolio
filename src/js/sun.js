@@ -128,14 +128,14 @@ function Mountains(peaks,seed){
 
     points.push({x: 0, y: y});
     for(var i = 1; i <= peaks; i++){
-      y = y + (Math.random() * 20)-10;
+      y = y + (Math.random() * 70)-40;
       points.push({x: i * step, y: y});
     }
   };
   this.draw = function(){
     c.save();
     //c.fillStyle = "rgba(20,20,20,1)";
-    c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(50,100,20,1)"},{s:0, c:"rgba(200,80,200,1)"}]});
+    c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(50,0,100,1)"},{s:0, c:"rgba(200,80,200,1)"}]});
     c.beginPath();
     c.moveTo(points[0].x, h/2-points[0].y);
     for(var p = 1; p < points.length; p++){
@@ -148,7 +148,7 @@ function Mountains(peaks,seed){
     c.restore();
 
     c.globalCompositeOperation = "lighter";
-    c.fillStyle = "rgba("+(h-mY)+","+(h-mY)+","+(h-mY)+",0.03)";
+    c.fillStyle = "rgba(50,0,100,0.99)";
     for(var p = 0; p < points.length-1; p++){
       var va1 = Math.atan2(h/2-points[p].y - per.y, points[p].x - per.x),
           va2 = Math.atan2(h/2-points[p+1].y - per.y, points[p+1].x - per.x);

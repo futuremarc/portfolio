@@ -20,17 +20,16 @@
 
      .tag{
        padding: 2px 4px 2px 4px;
-       border-radius:8px;
        margin: 2px 2px 2px 2px;
        display:inline-block;
        font-size:1.2em;
      }
 
      .tech{
-       background-color:#eee;
+       background-color:rgba(50,0,100,.2);
      }
      .role{
-       background-color:#eee;
+       background-color:rgba(100,0,50,.2);
      }
 
   }
@@ -113,9 +112,9 @@
   }
 
   .close-modal{
-    background-color: #ccc;
+    background-color: rgba(50,0,100,.2);
     &:hover{
-      background-color: darken(#ccc,10%);
+      background-color: darken(rgba(50,0,100,.2),10%);
     }
     color: white;
     font-size: 20px;

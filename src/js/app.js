@@ -49,11 +49,11 @@ export class App extends React.Component{
           title:'Passtime',
           shortName:'passtime',
           shortDescription:'avatar chrome extension',
-          description:'A chrome extension that puts avatars of friends at the bottom of a browser so friends can watch videos, listen to songs, and read articles together more easily',
+          description:'A chrome extension that puts avatars of friends at the bottom of web browsers so friends can watch videos, listen to songs, and read articles together more easily',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
           site:{url:'https://passti.me',alive:false},
-          media:[{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
           press:[{title:'',url:''}]
         },
         twitch : {
