@@ -15,7 +15,7 @@ const cssProd = ExtractTextPlugin.extract({
       query: {
         search: '/../images',
         replace: './images',
-        flags: 'i'
+        flags: 'g'
       }
     },
     {
@@ -96,7 +96,7 @@ module.exports = {
         query: {
           search: '/../images',
           replace: './images',
-          flags: 'i'
+          flags: 'g'
         }
       }
 
