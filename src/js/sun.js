@@ -135,7 +135,7 @@ function Mountains(peaks,seed){
   this.draw = function(){
     c.save();
     //c.fillStyle = "rgba(20,20,20,1)";
-    c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(50,100,20,.4)"},{s:0, c:"rgba(200,80,200,1)"}]});
+    c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(50,100,20,1)"},{s:0, c:"rgba(200,80,200,1)"}]});
     c.beginPath();
     c.moveTo(points[0].x, h/2-points[0].y);
     for(var p = 1; p < points.length; p++){

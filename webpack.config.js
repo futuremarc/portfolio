@@ -64,7 +64,7 @@ module.exports = {
         exclude:/node_modules/,
         loader: [
           'file-loader?name=images/[name].[ext]',
-          'image-webpack-loader'
+          'image-webpack-loader?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "35", speed: 4}, mozjpeg: {quality: 35}}'
         ]
       },
 
