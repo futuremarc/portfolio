@@ -1,74 +1,16 @@
 @import '../bootstrap/customizations.scss';
 @import './slick/slick.scss';
 @import './slick/slick-theme.scss';
+@import './project-tiles.scss';
+@import './landing-page.scss';
 
 html,body{
   overflow-x: hidden;
 }
 
-#welcome-bg{
-  display:none;
-  flex-direction: column;
-  align-items: center;
-  height:100vh;
-  width:100vw;
-  top:0;
-  position:absolute;
-
-  #welcome{
-
-    font-size:8vw;
-    color:rgba(100,100,100,.4);
-    top:-1.2vw;
-    left:2vw;
-    padding:0;
-    margin:0;
-    position:absolute;
-    align-self: flex-start;
-
-    span{
-      padding:0;
-      margin:-5px;
-    }
-
-
-    @media (max-width: 1100px) {
-      top:28vw;
-    }
-
-  }
-
-  #scroll-btn{
-    font-size:2.75em;
-    color:white;
-    padding:0;
-    position:absolute;
-    bottom:1.3em;
-    div{
-      padding:0;
-      margin:0;
-      height:auto;
-      width:auto;
-    }
-  }
-
-
-  #scroll-btn{
-    font-size:2.75em;
-    color:white;
-    padding:0;
-    position:absolute;
-    bottom:3.2em;
-  }
-
-}
-
-
-
 .center-text{
   text-align: center;
 }
-
 
 .square {
     float:left;
@@ -107,17 +49,6 @@ html,body{
     vertical-align:middle;
 }
 
-/*  For list */
-ul{
-    text-align:left;
-    margin:5% 0 0;
-    padding:0;
-    list-style-position:inside;
-}
-li{
-    margin: 0 0 0 5%;
-    padding:0;
-}
 
 /*  For responsive images */
 
@@ -136,155 +67,6 @@ li{
     color:#fff;
 }
 
-.tag{
-  padding: 2px 4px 2px 4px;
-  border-radius:8px;
-  margin: 2px 2px 2px 2px;
-  display:inline-block;
-  font-size:1.2em;
-}
-
-.tech{
-  background-color:#eee;
-}
-.role{
-  background-color:#eee;
-}
-
-#twitch{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/twitch2.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/twitch-gif.gif');
-    }
-}
-
-#bedroom{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/bedroom-jammer2.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/bedroom-jammer-gif.gif');
-    }
-}
-
-#glitch{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/glitch-the-world1.png');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glitch-the-world-gif.gif');
-    }
-}
-
-
-#svrround{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/svrround1.png');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/svrround-gif3.gif');
-    }
-}
-
-#canale{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/canale-quattro1.png');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/canale-quattro-gif.gif');
-    }
-}
-
-#magic{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/magic-is-real1.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/magic-is-real1.gif');
-    }
-}
-
-#haptec{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/haptec1.png');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/haptec-gif.gif');
-    }
-}
-
-#passtime{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/passtime1.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/passtime-gif.gif');
-    }
-}
-
-#immigrater{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/immigrater1.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/immigrater-gif.gif');
-    }
-}
-
-#glove{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/glove-phone1.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glove-phone-gif.gif');
-    }
-}
-
-#dimensions{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/dimensions1.jpg');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/dimensions-gif.gif');
-    }
-}
-
-#emoji{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/emoji1.png');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/emoji-gif.gif');
-    }
-}
-
-#space{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/space-girl1.png');
-    &:hover{
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/space-girl1.png');
-    }
-}
-
-
-.carousel-left-enter{
-  opacity: 0.01;
-  transform: translateX(100%);
-}
-.carousel-left-enter.carousel-left-enter-active{
-  opacity: 1;
-  transition: 500ms ease-out;
-  transform: translateX(0%);
-}
-
-.carousel-left-leave{
-  transform: translateX(-100%);
-  position:absolute;
-}
-.carousel-left-leave.carousel-left-leave-active{
-  transition: 500ms ease-out;
-  transform: translateX(-200%);
-  position:absolute;
-}
-
-.carousel-right-enter{
-  opacity: 0.01;
-  transform: translateX(-100%);
-}
-.carousel-right-enter.carousel-right-enter-active{
-  opacity: 1;
-  transition: 500ms ease-out;
-  transform: translateX(0%);
-}
-
-.carousel-right-leave{
-  opacity: 1;
-  transform: translateX(-100%);
-  position:absolute;
-}
-.carousel-right-leave.carousel-right-leave-active{
-  opacity: 0.01;
-  transition: 500ms ease-out;
-  transform: translateX(0%);
-  position:absolute;
-}
 
 
 .project-content{
@@ -304,6 +86,23 @@ li{
      p{
        font-size:1.5em;
      }
+
+
+     .tag{
+       padding: 2px 4px 2px 4px;
+       border-radius:8px;
+       margin: 2px 2px 2px 2px;
+       display:inline-block;
+       font-size:1.2em;
+     }
+
+     .tech{
+       background-color:#eee;
+     }
+     .role{
+       background-color:#eee;
+     }
+
   }
 
   .media-col{
@@ -327,14 +126,10 @@ li{
   font-style: italic;
 }
 
-
-
 .carousel{
   max-width:800px;
   max-height:400px;
-
 }
-
 
 .project-img{
   width:auto;

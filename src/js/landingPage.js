@@ -24,7 +24,7 @@ function setOnScroll(){
 }
 
 
-var canvas, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
+var canvas, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
@@ -35,6 +35,7 @@ var canvas, c, w, h, welcome, debounce = false, animateInterval, disableAnimate 
 window.onload = function(){
 
   canvas = document.getElementById("canvas");
+  clouds = document.getElementById("clouds");
   welcome = document.getElementById("welcome-bg");
 
   w = canvas.width = window.innerWidth;
@@ -64,6 +65,7 @@ window.onload = function(){
 
   canvas.style.display = 'flex';
   welcome.style.display = 'flex';
+  clouds.style.display = 'block';
   setOnScroll();
   startReactApp();
 }

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const bootstrapEntryPoints = require('./webpack.bootstrap.config');
-const glob = require('glob');
+const glob = require('glob-all');
 const PurifyCSSPlugin = require('purifycss-webpack');
 
 const cssDev = ['style-loader', 'css-loader','sass-loader']
@@ -55,9 +55,27 @@ module.exports = {
         ]
       },
 
-      { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000&name=fonts/[name].[ext]'},
-      { test: /\.(ttf|eot)$/, loader: 'file-loader?name=fonts/[name].[ext]'},
-      { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports-loader?jQuery=jquery'},
+      {
+        test: /\.(woff2?|svg)$/,
+        loader: 'url-loader?limit=10000&name=[name].[ext]',
+        options:{
+          publicPath:'dist/',
+          outputPath:'css/fonts/'
+        }
+
+      },
+      {
+        test: /\.(ttf|eot)$/,
+        loader: 'file-loader?name=[name].[ext]',
+        options:{
+          publicPath:'dist/',
+          outputPath:'css/fonts/'
+        }
+      },
+      {
+        test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/,
+        loader: 'imports-loader?jQuery=jquery'
+      },
 
     ]
   },
@@ -89,7 +107,10 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(), //hot module replacement
       new webpack.NamedModulesPlugin(), //hot module replacement
       new PurifyCSSPlugin({
-        paths: glob.sync(path.join(__dirname, 'src/*.html'))
+        paths: glob.sync([
+          path.join(__dirname, 'src/*.html'),
+          path.join(__dirname, 'src/js/*.js')
+        ])
       }) //only compile css associated in these files!... cool
     ],
     devServer: {

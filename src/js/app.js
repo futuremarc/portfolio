@@ -48,8 +48,8 @@ export class App extends React.Component{
         passtime : {
           title:'Passtime',
           shortName:'passtime',
-          shortDescription:'experience media together chrome extension',
-          description:'',
+          shortDescription:'avatar chrome extension',
+          description:'A chrome extension that puts avatars of friends at the bottom of a browser so friends can watch videos, listen to songs, and read articles together more easily',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
           site:{url:'https://passti.me',alive:false},
@@ -67,18 +67,17 @@ export class App extends React.Component{
           media:[{type:'image',url:'/../images/twitch2.jpg'},{type:'image',url:'/../images/twitch1.jpg'},{type:'image',url:'/../images/twitch3.jpg'},{type:'image',url:'/../images/twitch4.jpg'},{type:'image',url:'/../images/twitch5.jpg'},{type:'image',url:'/../images/twitch6.jpg'}],
           press:[{title:'',url:''}]
         },
-        bedroom : {
-          title:'Bedroom Jammer',
-          shortName:'bedroom',
-          shortDescription:'interactive music videogame',
-          description:'An interactive music web app where each user that connects gets 1 of 4 unique characters to interact with the environment to create music together.',
-          tech:['Node.js', 'Websockets', 'Phaser.js', 'Javascript', 'HTML', 'CSS', 'Express.js'],
-          role:['Front-end','Back-end','Visual Design','Concept','Sound Design'],
-          site:{url:'http://bedroomjammer.com',alive:false},
-          media:[{type:'image',url:'/../images/bedroom-jammer1.jpg'},{type:'image',url:'/../images/bedroom-jammer2.jpg'},{type:'image',url:'/../images/bedroom-jammer-gif.gif'}],
+        dimensions : {
+          title:'Dimensions',
+          shortName:'dimensions',
+          shortDescription:'interactive fog installation',
+          description:'An installation where fog is projection mapped to recreate the look and feel of our galaxy. Users can join a mobile web app and leave their own colored stars presented with fiber optic cables and can even control the speed and direction of the fog of stars.',
+          tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS','Arduino','Three.js'],
+          role:['Front-end','Fabrication','Sound Design','Design'],
+          site:{},
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}, {type:'image',url:'/../images/dimenions4.png'},{type:'image',url:'/../images/dimenions3.png'},{type:'image',url:'/../images/dimenions2.png'}],
           press:[{title:'',url:''}]
         },
-
 
         canale : {
           title:'Canale Quattro',
@@ -89,17 +88,6 @@ export class App extends React.Component{
           role:['Front-end','Back-end','Visual Design','Sound Design'],
           site:{url:'https://canalequattro.tv',alive:true},
           media:[{type:'youtube',url:'https://youtube.com/embed/q6EjzpLOwoo'}],
-          press:[{title:'',url:''}]
-        },
-        glitch : {
-          title:'Glitch the World',
-          shortName:'glitch',
-          shortDescription:'interactive cinema web app',
-          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.',
-          tech:['Touchdesigner','Websockets','Python', 'Node.js', 'Javascript', 'HTML', 'CSS'],
-          role:['Front-end','Back-end','Design','Story', 'Concept'],
-          site:{},
-          media:[{type:'youtube',url:'https://youtube.com/embed/7HcznestTHI'}],
           press:[{title:'',url:''}]
         },
 
@@ -114,17 +102,31 @@ export class App extends React.Component{
           media:[{type:'youtube',url:'https://www.youtube.com/embed/MspImczjQ5Q'}],
           press:[{title:'',url:''}]
         },
-        dimensions : {
-          title:'Dimensions',
-          shortName:'dimensions',
-          shortDescription:'interactive fog installation',
-          description:'An installation where fog is projection mapped to recreate the look and feel of our galaxy. Users can join a mobile web app and leave their own colored stars presented with fiber optic cables and can even control the speed and direction of the fog of stars.',
-          tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS','Arduino','Three.js'],
-          role:['Front-end','Fabrication','Sound Design','Design'],
-          site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}, {type:'image',url:'/../images/dimenions4.png'},{type:'image',url:'/../images/dimenions3.png'},{type:'image',url:'/../images/dimenions2.png'}],
+
+        bedroom : {
+          title:'Bedroom Jammer',
+          shortName:'bedroom',
+          shortDescription:'interactive music videogame',
+          description:'An interactive music web app where each user that connects gets 1 of 4 unique characters to interact with the environment to create music together.',
+          tech:['Node.js', 'Websockets', 'Phaser.js', 'Javascript', 'HTML', 'CSS', 'Express.js'],
+          role:['Front-end','Back-end','Visual Design','Concept','Sound Design'],
+          site:{url:'http://bedroomjammer.com',alive:false},
+          media:[{type:'image',url:'/../images/bedroom-jammer1.jpg'},{type:'image',url:'/../images/bedroom-jammer2.jpg'},{type:'image',url:'/../images/bedroom-jammer-gif.gif'}],
           press:[{title:'',url:''}]
         },
+
+        glitch : {
+          title:'Glitch the World',
+          shortName:'glitch',
+          shortDescription:'interactive cinema web app',
+          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.',
+          tech:['Touchdesigner','Websockets','Python', 'Node.js', 'Javascript', 'HTML', 'CSS'],
+          role:['Front-end','Back-end','Design','Story', 'Concept'],
+          site:{},
+          media:[{type:'youtube',url:'https://youtube.com/embed/7HcznestTHI'}],
+          press:[{title:'',url:''}]
+        },
+
         magic : {
           title:'Magic is Real',
           shortName:'magic',
@@ -181,9 +183,7 @@ export class App extends React.Component{
 
     return (
       <div>
-
         <div className="row">
-
           {
             Object.keys(projects).map((item,index) => {
               return <Preview projects={projects} title={projects[item].title}  shortDescription={projects[item].shortDescription} shortName={projects[item].shortName} key={index}/>
