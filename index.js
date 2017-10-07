@@ -9,5 +9,5 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // Listen for requests
 let server = app.listen(app.get('port'), function() {
   let port = server.address().port;
-  console.log('Magic happens on port ' + port);
+  console.log('app on ' + port);
 });

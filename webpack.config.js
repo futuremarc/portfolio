@@ -11,8 +11,16 @@ const cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
   use:  [
     {
+      loader: 'string-replace-loader',
+      query: {
+        search: '/../images',
+        replace: './images'
+      }
+    },
+    {
         loader: "css-loader"
-    },{
+    },
+    {
         loader: "postcss-loader"
     },{
         loader: "sass-loader"
@@ -54,7 +62,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude:/node_modules/,
         loader: [
-          'file-loader?name=[name].[ext]',
+          'file-loader?name=images/[name].[ext]',
           'image-webpack-loader'
         ]
       },
@@ -80,6 +88,15 @@ module.exports = {
         test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/,
         loader: 'imports-loader?jQuery=jquery'
       },
+      {
+        test: /\.(js)$/i,
+        exclude:/node_modules/,
+        loader: 'string-replace-loader',
+        query: {
+          search: '/../images',
+          replace: './images'
+        }
+      }
 
     ]
   },
@@ -94,7 +111,7 @@ module.exports = {
       }),
       new ExtractTextPlugin({
         filename: '/css/[name].css',
-        disable: true,
+        disable: !isProd,
         allChunks: true
     }),
       new webpack.HotModuleReplacementPlugin(), //hot module replacement
