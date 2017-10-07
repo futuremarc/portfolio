@@ -9,13 +9,18 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const cssDev = ['style-loader', 'css-loader','sass-loader']
 const cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
-  use: ['css-loader','postcss-loader','sass-loader'],
+  use:  [
+    {
+        loader: "css-loader"
+    },{
+        loader: "postcss-loader"
+    },{
+        loader: "sass-loader"
+    }],
   publicPath: '/dist/'
 })
 
-
 const cssConfig = isProd ? cssProd : cssDev;
-
 const bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev;
 
 module.exports = {
@@ -23,13 +28,13 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './js/index.js',
-    contact: './js/contact.js',
     bootstrap: bootstrapConfig
   },
   output:{
     path: path.resolve( __dirname, 'dist'),
     filename: '[name].bundle.js'
   },
+  devtool: 'source-map',
   module:{
     loaders:[
       {
@@ -49,7 +54,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude:/node_modules/,
         loader: [
-          'file-loader?name=portfolo/images/[name].[ext]',
+          'file-loader?name=[name].[ext]',
           'image-webpack-loader'
         ]
       },
@@ -59,7 +64,7 @@ module.exports = {
         loader: 'url-loader?limit=10000&name=[name].[ext]',
         options:{
           publicPath:'dist/',
-          outputPath:'css/fonts/'
+          outputPath:'fonts/'
         }
 
       },
@@ -68,7 +73,7 @@ module.exports = {
         loader: 'file-loader?name=[name].[ext]',
         options:{
           publicPath:'dist/',
-          outputPath:'css/fonts/'
+          outputPath:'fonts/'
         }
       },
       {
@@ -85,18 +90,7 @@ module.exports = {
           collapseWhitespace: true
         },
         hash:true,
-        excludeChunks:['contact'],
         template: './index.html',
-      }),
-      new HtmlWebpackPlugin({
-        title: 'Contact',
-        minify: {
-          collapseWhitespace: true
-        },
-        hash:true,
-        chunks:['contact'],
-        filename: './../dist/contact.html',
-        template: './contact.html',
       }),
       new ExtractTextPlugin({
         filename: '/css/[name].css',
