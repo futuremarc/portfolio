@@ -30,7 +30,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'Express.js', 'MongoDB','Handlebars','Gulp', 'Pug/Jade', 'SASS'],
           role:['Front-end','Back-end','Visual Design','Concept','Founder','Product','Business'],
           site:{url:'https://svrround.com',alive:true},
-          media:[{type:'youtube',url:'https://youtube.com/embed/POa-hH04fXA'},{type:'image',url:'./images/svrround-gif2.gif'},{type:'image',url:'./images/svrround1.png'},{type:'image',url:'./images/svrround2.jpg'}],
+          media:[{type:'youtube',url:'https://youtube.com/embed/POa-hH04fXA'},{type:'image',url:'/../images/svrround-gif2.gif'},{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/svrround2.jpg'}],
           press:[{title:'',url:''}]
         },
         immigrater : {
@@ -53,7 +53,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
           site:{url:'https://passti.me',alive:false},
-          media:[{type:'image',url:'./images/passtime1.jpg'}, {type:'image',url:'./images/passtime2.png'},{type:'image',url:'./images/passtime-gif.gif'}],
+          media:[{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
           press:[{title:'',url:''}]
         },
         twitch : {
@@ -64,7 +64,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js'],
           role:['Front-end','Back-end'],
           site:{},
-          media:[{type:'image',url:'./images/twitch2.jpg'},{type:'image',url:'./images/twitch1.jpg'},{type:'image',url:'./images/twitch3.jpg'},{type:'image',url:'./images/twitch4.jpg'},{type:'image',url:'./images/twitch5.jpg'},{type:'image',url:'./images/twitch6.jpg'}],
+          media:[{type:'image',url:'/../images/twitch2.jpg'},{type:'image',url:'/../images/twitch1.jpg'},{type:'image',url:'/../images/twitch3.jpg'},{type:'image',url:'/../images/twitch4.jpg'},{type:'image',url:'/../images/twitch5.jpg'},{type:'image',url:'/../images/twitch6.jpg'}],
           press:[{title:'',url:''}]
         },
         dimensions : {
@@ -75,7 +75,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS','Arduino','Three.js'],
           role:['Front-end','Fabrication','Sound Design','Design'],
           site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}, {type:'image',url:'./images/dimenions4.png'},{type:'image',url:'./images/dimenions3.png'},{type:'image',url:'./images/dimenions2.png'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}, {type:'image',url:'/../images/dimenions4.png'},{type:'image',url:'/../images/dimenions3.png'},{type:'image',url:'/../images/dimenions2.png'}],
           press:[{title:'',url:''}]
         },
 
@@ -111,7 +111,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Phaser.js', 'Javascript', 'HTML', 'CSS', 'Express.js'],
           role:['Front-end','Back-end','Visual Design','Concept','Sound Design'],
           site:{url:'http://bedroomjammer.com',alive:false},
-          media:[{type:'image',url:'./images/bedroom-jammer1.jpg'},{type:'image',url:'./images/bedroom-jammer2.jpg'},{type:'image',url:'./images/bedroom-jammer-gif.gif'}],
+          media:[{type:'image',url:'/../images/bedroom-jammer1.jpg'},{type:'image',url:'/../images/bedroom-jammer2.jpg'},{type:'image',url:'/../images/bedroom-jammer-gif.gif'}],
           press:[{title:'',url:''}]
         },
 
@@ -146,7 +146,7 @@ export class App extends React.Component{
           tech:['Arduino', 'Circuitry','Fona Board'],
           role:['Code','Fabrication','Design','Concept','Sensors'],
           site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/Fj5yJmoLfZg'},{type:'image',url:'./images/glove-phone1.jpg'},{type:'image',url:'./images/glove-phone2.jpg'},{type:'image',url:'./images/glove-phone3.jpg'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/Fj5yJmoLfZg'},{type:'image',url:'/../images/glove-phone1.jpg'},{type:'image',url:'/../images/glove-phone2.jpg'},{type:'image',url:'/../images/glove-phone3.jpg'}],
           press:[{title:'',url:''}]
         },
         emoji : {
@@ -157,7 +157,7 @@ export class App extends React.Component{
           tech:[ 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Design','Concept'],
           site:{},
-          media:[{type:'image',url:'./images/emoji-gif.gif'}],
+          media:[{type:'image',url:'/../images/emoji-gif.gif'}],
           press:[{title:'',url:''}]
         }
         // ,

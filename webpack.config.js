@@ -49,7 +49,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude:/node_modules/,
         loader: [
-          'file-loader?name=images/[name].[ext]',
+          'file-loader?name=portfolo/images/[name].[ext]',
           'image-webpack-loader'
         ]
       },
