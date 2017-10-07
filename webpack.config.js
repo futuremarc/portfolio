@@ -100,7 +100,7 @@ module.exports = {
       }),
       new ExtractTextPlugin({
         filename: '/css/[name].css',
-        disable: false,
+        disable: true,
         allChunks: true
     }),
       new webpack.HotModuleReplacementPlugin(), //hot module replacement
