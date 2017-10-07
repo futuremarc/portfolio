@@ -89,7 +89,7 @@ module.exports = {
         loader: 'imports-loader?jQuery=jquery'
       },
       {
-        test: /\.(js)$/i,
+        test: /\.(js|scss)$/i,
         exclude:/node_modules/,
         loader: 'string-replace-loader',
         query: {
