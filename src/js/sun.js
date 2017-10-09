@@ -34,7 +34,7 @@ let canvas, ctx, clouds, c, w, h, welcome, debounce = false, animateInterval, di
     resize = true,
     mousemove = true,
     per = { x: 0, y: 0 ,step:0},
-    cloudSpeed = 2,
+    cloudSpeed = 1.25,
     mtn, trackmouse = true, isMobile = false,
     marcClouds = [],
     marcCloud = {x:window.innerWidth,img:null}, marcCloud2 = {x:window.innerWidth,img:null}, marcCloud3 = {x:window.innerWidth,img:null}, marcCloud4 = {x:window.innerWidth,img:null}, marcCloud5 = {x:window.innerWidth,img:null};
@@ -45,6 +45,8 @@ window.onload = function(){
     isMobile = true;
     cloudSpeed = .25;
   }
+
+  if (window.innerWidth < 900) cloudSpeed = .45;
 
 
 
@@ -64,7 +66,7 @@ window.onload = function(){
     if (disableAnimate) animate();
 
     if (isMobile) return
-    mtn = new Mountains(100,"10");
+    mtn = new Mountains(60,"10");
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
    });
@@ -75,7 +77,7 @@ window.onload = function(){
 
      if (disableAnimate) animate();
 
-     mtn = new Mountains(100,"10");
+     mtn = new Mountains(60,"10");
      w = canvas.width = window.innerWidth;
      h = canvas.height = window.innerHeight;
     });
@@ -91,7 +93,7 @@ window.onload = function(){
   mY = w/2;
 
   per = { x: w/2, y: h/2, step: 1 }
-  mtn = new Mountains(100,"10");
+  mtn = new Mountains(60,"10");
 
 
   canvas.style.display = 'flex';
@@ -219,7 +221,7 @@ function Mountains(peaks,seed){
 
     points.push({x: 0, y: y});
     for(let i = 1; i <= peaks; i++){
-      y = y + (Math.random() * 60)-31;
+      y = y + (Math.random() * 60)-35;
       points.push({x: i * step, y: y});
     }
   };
