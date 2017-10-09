@@ -59,12 +59,17 @@
     @media (min-width: 60em) {
       margin:55px 0px 55px 0px;
     }
-
   }
 
   .carousel{
     max-width:800px;
     max-height:400px;
+    img{
+      max-width:100%;
+      height:auto;
+    }
+    
+        margin:55px 0px 55px 0px;
   }
 
   .project-img{

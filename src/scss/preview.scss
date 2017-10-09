@@ -15,8 +15,13 @@
     padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
     background-color:#1E1E1E;
     overflow:hidden;
+
     &:hover{
       cursor:pointer;
+    }
+
+    @media(max-width:767px){
+      padding-bottom : 80%;
     }
 }
 
@@ -27,7 +32,7 @@
     height:auto;
     max-height:90%;
     max-width:100%;
-    min-height:60%;
+
 }
 
 
@@ -49,6 +54,7 @@
     padding: 5%;
     font-size: 26px;
     font-weight: 400;
+
 }
 
 
