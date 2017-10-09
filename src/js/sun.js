@@ -11,6 +11,21 @@ function startReactApp(){
   )
 }
 
+function loadImages(){
+
+   marcCloud = new Image();
+   marcCloud.onload = function () {
+       c.drawImage(marcCloud, 0, 0);
+       c.drawImage(marcCloud, 300, 300,marcCloud.width/5,marcCloud.height/5);
+   };
+
+   marcCloud.src = '/../images/marc-cloud.png';
+}
+
+function loadImage(url) {
+  return new Promise(resolve => { let i = new Image(); i.onload = ()=>{resolve(i)}; i.src=url; });
+}
+
 function setOnScroll(){
   $(window).on('scroll', (e)=>{
     if ($(window).scrollTop() > window.innerHeight/5 && !disableAnimate){
@@ -24,15 +39,21 @@ function setOnScroll(){
 }
 
 
-var canvas, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
+let canvas, ctx, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
     mousemove = true,
-    per = { x: 0, y: 0 },
-    mtn, trackmouse = true;
+    per = { x: 0, y: 0 ,step:0},
+    mtn, trackmouse = true, isMobile = false,
+    marcClouds = [],
+    marcCloud = {x:window.innerWidth,img:null}, marcCloud2 = {x:window.innerWidth,img:null}, marcCloud3 = {x:window.innerWidth,img:null}, marcCloud4 = {x:window.innerWidth,img:null}, marcCloud5 = {x:window.innerWidth,img:null};
 
 window.onload = function(){
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    isMobile = true;
+  }
 
   canvas = document.getElementById("canvas");
   clouds = document.getElementById("clouds");
@@ -42,6 +63,8 @@ window.onload = function(){
   h = canvas.height = window.innerHeight;
   c = canvas.getContext('2d');
 
+  if (isMobile) trackmouse = false;
+
   !resize || window.addEventListener('resize', function(e){
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
@@ -50,10 +73,9 @@ window.onload = function(){
    });
   !mousemove || window.addEventListener('mousemove', function(e){
 
-    trackmouse = true;
     mX = e.pageX-20; mY = e.pageY-20;
-    per = { x: mX, y: mY };
-    //animate()
+    per = { x: mX, y: mY ,step: per.step};
+
   });
 
   mX = w/2;
@@ -61,17 +83,53 @@ window.onload = function(){
 
   per = { x: w/2, y: h/2, step: 1 }
   mtn = new Mountains(100,"10");
-  animateInterval = window.setInterval(animate,17);
+
 
   canvas.style.display = 'flex';
   welcome.style.display = 'flex';
-  clouds.style.display = 'block';
+  //clouds.style.display = 'block';
+
   setOnScroll();
-  startReactApp();
+
+  loadImage('/../images/marc-cloud.png').then((image)=>{
+
+    marcCloud.img = image;
+    marcClouds.push(marcCloud);
+
+    while (marcCloud.img.width > 64 * 5) {
+      marcCloud.img = resizeImg(marcCloud.img);
+    }
+
+    marcCloud2.img = image;
+    marcClouds.push(marcCloud2);
+
+    while (marcCloud2.img.width > 64 * 4) {
+      marcCloud2.img = resizeImg(marcCloud2.img);
+    }
+
+    marcCloud3.img = image;
+    marcClouds.push(marcCloud3);
+
+    while (marcCloud3.img.width > 64 * 3) {
+      marcCloud3.img = resizeImg(marcCloud3.img);
+    }
+
+    marcCloud4.img = image;
+    marcClouds.push(marcCloud4);
+
+    while (marcCloud4.img.width > 64 * 2) {
+      marcCloud4.img = resizeImg(marcCloud4.img);
+    }
+
+    animateInterval = window.setInterval(animate,17);
+    startReactApp();
+
+  })
+
 }
 
   function newGradient(gradient){
-    var grad;
+    let grad;
     switch(gradient.type){
       case "radial":
         grad = c.createRadialGradient(gradient.x1, gradient.y1, gradient.r1, gradient.x1, gradient.y1, gradient.r2);
@@ -81,7 +139,7 @@ window.onload = function(){
         break;
     }
 
-    for(var i = 0; i < gradient.stops.length; i++){
+    for(let i = 0; i < gradient.stops.length; i++){
       grad.addColorStop(gradient.stops[i].s, gradient.stops[i].c);
     }
 
@@ -94,6 +152,7 @@ function animate(){
     per.x = mX = w/2 + Math.round(Math.cos(per.step)*w/2);
     per.y = mY = h/2 + Math.round(Math.sin(per.step)*h/2);
     per.step += 0.03;
+
     if(per.step > twoPI)
       per.step = 0;
   }
@@ -108,27 +167,49 @@ function animate(){
       r1: 0,
       r2: w,
       stops: [
-        { s: 0, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +",0.5)" },
-        { s: 0.05, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY-128)) +",128,0.5)" },
-        { s: 1, c: "rgba(0,"+ Math.floor((h-mY-128)) +","+ Math.floor((h-mY)) +",0.5)" }
+        { s: 0, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +",.9)" },
+        { s: 0.05, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY-128)) +",128,.9)" },
+        { s: 1, c: "rgba(0,"+ Math.floor((h-mY-128)) +","+ Math.floor((h-mY)) +",.9)" }
 
       ]
     }
   );
   c.fillRect(0,0,w,h);
+  c.drawImage(marcCloud.img, marcCloud.x, 220);
+  c.drawImage(marcCloud2.img, marcCloud2.x, 150);
+  c.drawImage(marcCloud3.img, marcCloud3.x, 100);
+  c.drawImage(marcCloud4.img, marcCloud4.x, 75);
+  updateMarcs();
   mtn.draw();
 
 }
 
+function updateMarcs(){
+  marcClouds.forEach(function(marc,index){
+    marc.x-=index + 2;
+    if (marc.x < 0 - marc.img.width) marc.x = window.innerWidth;
+  })
+}
+
+function resizeImg(i) {
+      let cc = document.createElement("canvas");
+      cc.width = i.width / 2;
+      cc.height = i.height / 2;
+      let ctx = cc.getContext("2d");
+      ctx.drawImage(i, 0, 0, cc.width, cc.height);
+      return cc;
+    }
+
+
 function Mountains(peaks,seed){
-  var points = [];
+  let points = [];
   this.init = function(){
-    var step = w / peaks,
+    let step = w / peaks,
         y = 0;
 
     points.push({x: 0, y: y});
-    for(var i = 1; i <= peaks; i++){
-      y = y + (Math.random() * 70)-40;
+    for(let i = 1; i <= peaks; i++){
+      y = y + (Math.random() * 60)-31;
       points.push({x: i * step, y: y});
     }
   };
@@ -138,7 +219,7 @@ function Mountains(peaks,seed){
     c.fillStyle = newGradient({type:"linear", x1: 0, y1: 0, x2: 0, y2: h, stops: [{s:1, c:"rgba(50,0,100,1)"},{s:0, c:"rgba(200,80,200,1)"}]});
     c.beginPath();
     c.moveTo(points[0].x, h/2-points[0].y);
-    for(var p = 1; p < points.length; p++){
+    for(let p = 1; p < points.length; p++){
       c.lineTo(points[p].x, h/2 - points[p].y);
     }
     c.lineTo(w,h);
@@ -149,8 +230,8 @@ function Mountains(peaks,seed){
 
     c.globalCompositeOperation = "lighter";
     c.fillStyle = "rgba(50,0,100,0.99)";
-    for(var p = 0; p < points.length-1; p++){
-      var va1 = Math.atan2(h/2-points[p].y - per.y, points[p].x - per.x),
+    for(let p = 0; p < points.length-1; p++){
+      let va1 = Math.atan2(h/2-points[p].y - per.y, points[p].x - per.x),
           va2 = Math.atan2(h/2-points[p+1].y - per.y, points[p+1].x - per.x);
 
       c.beginPath();

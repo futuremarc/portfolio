@@ -63,6 +63,9 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/twitch-gif.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/twitch-gif.gif');
+    }
 }
 
 #bedroom{
@@ -70,11 +73,17 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/bedroom-jammer-gif.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/bedroom-jammer-gif.gif');
+    }
 }
 
 #glitch{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/glitch-the-world1.png');
     &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glitch-the-world-gif.gif');
+    }
+    @media(max-width:767px){
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glitch-the-world-gif.gif');
     }
 }
@@ -85,11 +94,17 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/svrround-gif3.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/svrround-gif3.gif');
+    }
 }
 
 #canale{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/canale-quattro1.png');
     &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/canale-quattro-gif.gif');
+    }
+    @media(max-width:767px){
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/canale-quattro-gif.gif');
     }
 }
@@ -99,11 +114,17 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/magic-is-real1.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/magic-is-real1.gif');
+    }
 }
 
 #haptec{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/haptec1.png');
     &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/haptec-gif.gif');
+    }
+    @media(max-width:767px){
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/haptec-gif.gif');
     }
 }
@@ -113,11 +134,17 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/passtime-gif.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/passtime-gif.gif');
+    }
 }
 
 #immigrater{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/immigrater1.jpg');
     &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/immigrater-gif.gif');
+    }
+    @media(max-width:767px){
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/immigrater-gif.gif');
     }
 }
@@ -127,11 +154,17 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glove-phone-gif.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/glove-phone-gif.gif');
+    }
 }
 
 #dimensions{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/dimensions1.jpg');
     &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/dimensions-gif.gif');
+    }
+    @media(max-width:767px){
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/dimensions-gif.gif');
     }
 }
@@ -141,11 +174,17 @@
     &:hover{
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/emoji-gif.gif');
     }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/emoji-gif.gif');
+    }
 }
 
 #space{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/space-girl1.png');
     &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/space-girl1.png');
+    }
+    @media(max-width:767px){
       background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/space-girl1.png');
     }
 }
