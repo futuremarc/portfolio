@@ -58,13 +58,17 @@ window.onload = function(){
 
   if (isMobile) trackmouse = false;
 
-  !resize || window.addEventListener('resize', function(e){
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
+  !resize || window.addEventListener('resize', (e)=>{
+
     mtn = new Mountains(100,"10");
     if (disableAnimate) animate();
+
+    if (isMobile) return
+
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
    });
-  !mousemove || window.addEventListener('mousemove', function(e){
+  !mousemove || window.addEventListener('mousemove', (e)=>{
 
     mX = e.pageX-20; mY = e.pageY-20;
     per = { x: mX, y: mY ,step: per.step};
@@ -179,7 +183,7 @@ function animate(){
 
 function updateMarcs(){
   marcClouds.forEach(function(marc,index){
-    marc.x-=index + cloudSpeed;
+    marc.x-= (index * cloudSpeed);
     if (marc.x < 0 - marc.img.width) marc.x = window.innerWidth;
   })
 }
