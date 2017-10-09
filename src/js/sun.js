@@ -11,17 +11,6 @@ function startReactApp(){
   )
 }
 
-function loadImages(){
-
-   marcCloud = new Image();
-   marcCloud.onload = function () {
-       c.drawImage(marcCloud, 0, 0);
-       c.drawImage(marcCloud, 300, 300,marcCloud.width/5,marcCloud.height/5);
-   };
-
-   marcCloud.src = '/../images/marc-cloud.png';
-}
-
 function loadImage(url) {
   return new Promise(resolve => { let i = new Image(); i.onload = ()=>{resolve(i)}; i.src=url; });
 }
@@ -45,6 +34,7 @@ let canvas, ctx, clouds, c, w, h, welcome, debounce = false, animateInterval, di
     resize = true,
     mousemove = true,
     per = { x: 0, y: 0 ,step:0},
+    cloudSpeed = 1,
     mtn, trackmouse = true, isMobile = false,
     marcClouds = [],
     marcCloud = {x:window.innerWidth,img:null}, marcCloud2 = {x:window.innerWidth,img:null}, marcCloud3 = {x:window.innerWidth,img:null}, marcCloud4 = {x:window.innerWidth,img:null}, marcCloud5 = {x:window.innerWidth,img:null};
@@ -53,10 +43,13 @@ window.onload = function(){
 
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     isMobile = true;
+    cloudSpeed = .25;
   }
 
+
+
   canvas = document.getElementById("canvas");
-  clouds = document.getElementById("clouds");
+  //clouds = document.getElementById("clouds");
   welcome = document.getElementById("welcome-bg");
 
   w = canvas.width = window.innerWidth;
@@ -186,7 +179,7 @@ function animate(){
 
 function updateMarcs(){
   marcClouds.forEach(function(marc,index){
-    marc.x-=index + 2;
+    marc.x-=index + cloudSpeed;
     if (marc.x < 0 - marc.img.width) marc.x = window.innerWidth;
   })
 }
