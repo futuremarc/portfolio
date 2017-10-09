@@ -29,7 +29,7 @@ export class App extends React.Component{
           description:'An enterprise platform to easily create and share live 360˚ video streams. It combines rich interactivity on the viewers end with unique analytics on the streamers end to best utilize the 360˚ medium.',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'Express.js', 'MongoDB','Handlebars','Gulp', 'Pug/Jade', 'SASS'],
           role:['Front-end','Back-end','Visual Design','Concept','Founder','Product','Business'],
-          site:{url:'https://svrround.com',alive:true},
+          site:{url:'https://svrround.com',isAlive:true},
           media:[{type:'youtube',url:'https://youtube.com/embed/POa-hH04fXA'},{type:'image',url:'/../images/svrround-gif2.gif'},{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/svrround2.jpg'}],
           press:[{title:'',url:''}]
         },
@@ -40,7 +40,7 @@ export class App extends React.Component{
           description:'An interactive billboard located in Times Square that allowed anyone to swipe to accept or reject immigrants -- tinder style. The project critiqued the banale nature of the US attitude towards immigration.',
           tech:['Node.js', 'Websockets','Javascript', 'HTML', 'CSS','Express.js'],
           role:['Front-end','Back-end','Concept'],
-          site:{url:'https://immigrater.us', alive:false},
+          site:{url:'https://immigrater.us', isAlive:false},
           media:[{type:'youtube',url:'https://www.youtube.com/embed/apGaoW5eLO4'}],
           press:[{title:'',url:''}]
         },
@@ -52,7 +52,7 @@ export class App extends React.Component{
           description:'A chrome extension that puts avatars of friends at the bottom of web browsers so friends can watch videos, listen to songs, and read articles together more easily',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
-          site:{url:'https://passti.me',alive:false},
+          site:{url:'https://passti.me',isAlive:false},
           media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
           press:[{title:'',url:''}]
         },
@@ -60,7 +60,7 @@ export class App extends React.Component{
           title: 'Twitch Plays Shakespeare',
           shortName:'twitch',
           shortDescription:'interactive theatre web app',
-          description:'Inspired by the popular Twitch Plays Pokemon, in this interactive take on Shakespeare’s Hamlet, an in-person audience votes continuously on Hamlet’s actions throughout the course of the play. <br/> <br/> We built a voting system where the audience is prompted to vote via a mobile phone that gives pairs of choices timed throughout the performance. The voting prompts are brief and simple in order to keep the audience focused more on the performance than on their phones. A moderator controls the timing of new prompts. A big screen displays the winning choice and the next pair of choices to select from. And two small screens displaying the winning choice are placed on both sides of the stage to direct the actors.',
+          description:'Inspired by the popular Twitch Plays Pokemon, in this interactive take on Shakespeare’s Hamlet, an in-person audience votes continuously on Hamlet’s actions throughout the course of the play.',
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js'],
           role:['Front-end','Back-end'],
           site:{},
@@ -86,7 +86,7 @@ export class App extends React.Component{
           description:'Live broadcast website for the band Pheonix\'s single "J-Boy". Viewers watched together around the world with an immersive, functional, retro televsion.',
           tech:['WebGL', 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Back-end','Visual Design','Sound Design'],
-          site:{url:'https://canalequattro.tv',alive:true},
+          site:{url:'https://canalequattro.tv',isAlive:true},
           media:[{type:'youtube',url:'https://youtube.com/embed/q6EjzpLOwoo'}],
           press:[{title:'',url:''}]
         },
@@ -98,7 +98,7 @@ export class App extends React.Component{
           description:'An integrated system for bicycle navigation which allows a cyclist to intuitively feel their orientation to magnetic North, or a destination-beacon,  with vibration motors in the handles and an LED module to optimize bike journey safety, efficiency and freedom.',
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js','Arduino', 'Circuitry','Cordova'],
           role:['Front-end','Back-end','App Development','Fabrication','Design','Concept','Sensors','Product','Business'],
-          site: {url:'https://haptec.io',alive:false},
+          site: {url:'https://haptec.io',isAlive:false},
           media:[{type:'youtube',url:'https://www.youtube.com/embed/MspImczjQ5Q'}],
           press:[{title:'',url:''}]
         },
@@ -110,8 +110,8 @@ export class App extends React.Component{
           description:'An interactive music web app where each user that connects gets 1 of 4 unique characters to interact with the environment to create music together.',
           tech:['Node.js', 'Websockets', 'Phaser.js', 'Javascript', 'HTML', 'CSS', 'Express.js'],
           role:['Front-end','Back-end','Visual Design','Concept','Sound Design'],
-          site:{url:'http://bedroomjammer.com',alive:false},
-          media:[{type:'image',url:'/../images/bedroom-jammer1.jpg'},{type:'image',url:'/../images/bedroom-jammer2.jpg'},{type:'image',url:'/../images/bedroom-jammer-gif.gif'}],
+          site:{url:'http://bedroomjammer.com',isAlive:false},
+          media:[{type:'image',url:'/../images/bedroom-jammer2.jpg'},{type:'image',url:'/../images/bedroom-jammer1.jpg'},{type:'image',url:'/../images/bedroom-jammer-gif.gif'}],
           press:[{title:'',url:''}]
         },
 
@@ -134,7 +134,7 @@ export class App extends React.Component{
           description:'A performance piece showcasing a 7 episode interactive music piece that animates a story of a girl who finds many pieces',
           tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],
           role:['Front-end','Back-end','Design','Concept','Story','Music','Sound Design','Performance'],
-          site:{},
+          site:{url:'http://emoji.magicisreal.net',isAlive:true},
           media:[{type:'youtube',url:'https://www.youtube.com/embed/8ki_Bk6EPcw'}],
           press:[{title:'',url:''}]
         },

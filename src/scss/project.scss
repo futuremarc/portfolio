@@ -1,6 +1,15 @@
 
 .project-content{
 
+  .project-title{
+    margin-top:0;
+    color:#673ab7;
+    text-align: center;
+    color:rgba(255,255,255,1);
+    text-transform: uppercase;
+    padding:2px 4px 2px 4px;
+  }
+
   .details-col{
      padding:2em;
 
@@ -8,13 +17,25 @@
        margin:30px 0px 0px 0px;
      }
 
-
-     h2{
-       margin-top:0;
+     h3{
+       text-transform: uppercase;
+       background: rgba(255,255,255,.5);
+       display:inline-block;
+       padding:2px 4px 2px 4px;
+       color:#673ab7;
      }
 
      p{
        font-size:1.5em;
+       background-color:rgba(50,0,100,.2);
+     }
+
+     .link{
+       font-size:1.2em;
+     }
+
+     .dead-link{
+       text-decoration: line-through;
      }
 
 
@@ -22,15 +43,11 @@
        padding: 2px 4px 2px 4px;
        margin: 2px 2px 2px 2px;
        display:inline-block;
+       background-color:rgba(50,0,100,.2);
        font-size:1.2em;
      }
 
-     .tech{
-       background-color:rgba(50,0,100,.2);
-     }
-     .role{
-       background-color:rgba(100,0,50,.2);
-     }
+
 
   }
 
@@ -40,15 +57,15 @@
     padding: 2em;
 
     @media (min-width: 60em) {
-      margin:55px 0px 35px 0px;
+      margin:55px 0px 55px 0px;
     }
 
   }
 
-  .carousel{
-    max-width:800px;
-    max-height:400px;
-  }
+  // .carousel{
+  //   max-width:800px;
+  //   max-height:400px;
+  // }
 
   .project-img{
     width:auto;
@@ -86,9 +103,10 @@
     pointer-events:auto;
     z-index: 99999;
   }
+
   .modal{
-    background-color: white;
-    height: 100%;
+    background-color: #673ab7;
+    color:white;
     position: relative;
     margin:0 auto;
     padding: 3em;
@@ -97,9 +115,9 @@
     -webkit-overflow-scrolling: touch;
 
     @media (min-width: 60em) {
-      height: 85%;
-  	  margin: 5% auto;
-  	  max-height: 100em;
+      height: auto;
+  	  margin: 7% auto;
+  	  max-height: 55em;
       max-width: 95%;
       width: 95%;
   	}
@@ -109,16 +127,31 @@
   		width: 100%;
   		height: 100%;
     }
+
+    // &::before {
+    //     content: "";
+    //
+    //     z-index: 100;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height:100%;
+    //     background: url('https://anatacreative.com/codepen/noise.png');
+    //     animation: 1s infinite noise;
+    //     pointer-events: none;
+    // }
+
   }
 
   .close-modal{
-    background-color: rgba(50,0,100,.2);
+    background-color: rgba(255,255,255,.5);
     &:hover{
-      background-color: darken(rgba(50,0,100,.2),10%);
+      background-color: lighten(rgba(255,255,255,.7),20%);
     }
-    color: white;
-    font-size: 20px;
-    padding: 20px 18px;
+    color:  #673ab7;
+    font-size: 2.4em;
+    padding: 20px 20px;
     position: absolute;
     right: 0;
     text-align: center;
@@ -126,4 +159,47 @@
     top: 0;
     z-index: 1;
   }
+}
+
+
+@keyframes noise {
+    0%, 100% {
+        background-position: 0 0;
+    }
+
+    10% {
+        background-position: -5% -10%;
+    }
+
+    20% {
+        background-position: -15% 5%;
+    }
+
+    30% {
+        background-position: 7% -25%;
+    }
+
+    40% {
+        background-position: 20% 25%;
+    }
+
+    50% {
+        background-position: -25% 10%;
+    }
+
+    60% {
+        background-position: 15% 5%;
+    }
+
+    70% {
+        background-position: 0% 15%;
+    }
+
+    80% {
+        background-position: 25% 35%;
+    }
+
+    90% {
+        background-position: -10% 10%;
+    }
 }
