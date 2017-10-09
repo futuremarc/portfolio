@@ -34,7 +34,7 @@ let canvas, ctx, clouds, c, w, h, welcome, debounce = false, animateInterval, di
     resize = true,
     mousemove = true,
     per = { x: 0, y: 0 ,step:0},
-    cloudSpeed = 1,
+    cloudSpeed = 2,
     mtn, trackmouse = true, isMobile = false,
     marcClouds = [],
     marcCloud = {x:window.innerWidth,img:null}, marcCloud2 = {x:window.innerWidth,img:null}, marcCloud3 = {x:window.innerWidth,img:null}, marcCloud4 = {x:window.innerWidth,img:null}, marcCloud5 = {x:window.innerWidth,img:null};
@@ -60,14 +60,26 @@ window.onload = function(){
 
   !resize || window.addEventListener('resize', (e)=>{
 
-    mtn = new Mountains(100,"10");
+
     if (disableAnimate) animate();
 
     if (isMobile) return
-
+    mtn = new Mountains(100,"10");
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
    });
+
+   if (isMobile) trackmouse = false;
+
+   window.addEventListener('orientationchange', (e)=>{
+
+     if (disableAnimate) animate();
+
+     mtn = new Mountains(100,"10");
+     w = canvas.width = window.innerWidth;
+     h = canvas.height = window.innerHeight;
+    });
+
   !mousemove || window.addEventListener('mousemove', (e)=>{
 
     mX = e.pageX-20; mY = e.pageY-20;
@@ -93,28 +105,28 @@ window.onload = function(){
     marcCloud.img = image;
     marcClouds.push(marcCloud);
 
-    while (marcCloud.img.width > 64 * 5) {
+    while (marcCloud.img.width > 64 * 2) {
       marcCloud.img = resizeImg(marcCloud.img);
     }
 
     marcCloud2.img = image;
     marcClouds.push(marcCloud2);
 
-    while (marcCloud2.img.width > 64 * 4) {
+    while (marcCloud2.img.width > 64 * 3) {
       marcCloud2.img = resizeImg(marcCloud2.img);
     }
 
     marcCloud3.img = image;
     marcClouds.push(marcCloud3);
 
-    while (marcCloud3.img.width > 64 * 3) {
+    while (marcCloud3.img.width > 64 * 4) {
       marcCloud3.img = resizeImg(marcCloud3.img);
     }
 
     marcCloud4.img = image;
     marcClouds.push(marcCloud4);
 
-    while (marcCloud4.img.width > 64 * 2) {
+    while (marcCloud4.img.width > 64 * 5) {
       marcCloud4.img = resizeImg(marcCloud4.img);
     }
 
@@ -172,10 +184,11 @@ function animate(){
     }
   );
   c.fillRect(0,0,w,h);
-  c.drawImage(marcCloud.img, marcCloud.x, 220);
-  c.drawImage(marcCloud2.img, marcCloud2.x, 150);
-  c.drawImage(marcCloud3.img, marcCloud3.x, 100);
-  c.drawImage(marcCloud4.img, marcCloud4.x, 75);
+  c.drawImage(marcCloud.img, marcCloud.x, 20);
+  c.drawImage(marcCloud2.img, marcCloud2.x, 100);
+  c.drawImage(marcCloud3.img, marcCloud3.x, 150);
+  c.drawImage(marcCloud4.img, marcCloud4.x, 220);
+
   updateMarcs();
   mtn.draw();
 
@@ -183,8 +196,8 @@ function animate(){
 
 function updateMarcs(){
   marcClouds.forEach(function(marc,index){
-    marc.x-= (index * cloudSpeed);
-    if (marc.x < 0 - marc.img.width) marc.x = window.innerWidth;
+    marc.x-= (index * cloudSpeed || 1.7);
+    if (marc.x < 0 - marc.img.width * 2) marc.x = window.innerWidth;
   })
 }
 

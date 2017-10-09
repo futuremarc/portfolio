@@ -63,7 +63,7 @@ export class App extends React.Component{
           description:'Inspired by the popular Twitch Plays Pokemon, in this interactive take on Shakespeare’s Hamlet, an in-person audience votes continuously on Hamlet’s actions throughout the course of the play.',
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js'],
           role:['Front-end','Back-end'],
-          site:{},
+          site:{url:'twitchplays.com'},
           media:[{type:'image',url:'/../images/twitch2.jpg'},{type:'image',url:'/../images/twitch1.jpg'},{type:'image',url:'/../images/twitch3.jpg'},{type:'image',url:'/../images/twitch4.jpg'},{type:'image',url:'/../images/twitch5.jpg'},{type:'image',url:'/../images/twitch6.jpg'}],
           press:[{title:'',url:''}]
         },
@@ -83,7 +83,7 @@ export class App extends React.Component{
           title:'Canale Quattro',
           shortName:'canale',
           shortDescription:'music broadcast webpage',
-          description:'Live broadcast website for the band Pheonix\'s single "J-Boy". Viewers watched together around the world with an immersive, functional, retro televsion.',
+          description:'Live broadcast website for the band Pheonix\'s single "J-Boy". Viewers watched together around the world with an immersive, functional, retro television.',
           tech:['WebGL', 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Back-end','Visual Design','Sound Design'],
           site:{url:'https://canalequattro.tv',isAlive:true},

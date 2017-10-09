@@ -48,8 +48,9 @@ export class Project extends React.Component{
 
               <a href="#" onClick={this.onCloseClick} className="close-modal"><span>×</span></a>
               <div className="container-fluid">
-              <h1 className="project-title">{project.title}</h1>
+
                 <div className="row project-content">
+                  <h1 className="project-title">{project.title}</h1>
                   <div className="details-col col-xs-12 col-md-6 col-lg-6 col-xl-6">
 
                     <br/>
