@@ -62,10 +62,10 @@
 
   }
 
-  // .carousel{
-  //   max-width:800px;
-  //   max-height:400px;
-  // }
+  .carousel{
+    max-width:800px;
+    max-height:400px;
+  }
 
   .project-img{
     width:auto;
@@ -109,17 +109,18 @@
     color:white;
     position: relative;
     margin:0 auto;
-    padding: 3em;
+    padding: 0;
     display: block;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-
+    height: 100%;
     @media (min-width: 60em) {
       height: auto;
   	  margin: 7% auto;
   	  max-height: 55em;
       max-width: 95%;
       width: 95%;
+      padding: 3em;
   	}
 
   	> iframe, > div {

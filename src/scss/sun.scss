@@ -116,9 +116,10 @@
 #clouds{
   padding: 0 0;
   z-index: 1;
-  max-height:5%;
+  width:100%;
   position:absolute;
   pointer-events:none;
+  overflow-x: hidden;
 }
 
 .marc-cloud {

@@ -60,7 +60,7 @@ window.onload = function(){
   mY = w/2;
 
   per = { x: w/2, y: h/2, step: 1 }
-    mtn = new Mountains(100,"10");
+  mtn = new Mountains(100,"10");
   animateInterval = window.setInterval(animate,17);
 
   canvas.style.display = 'flex';
