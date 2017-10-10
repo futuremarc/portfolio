@@ -3,36 +3,12 @@ import ReactDOM from 'react-dom';
 import {App} from './App';
 import $ from 'jquery';
 
-
-function startReactApp(){
-  ReactDOM.render(
-    <App />,
-    document.getElementById('react-app')
-  )
-}
-
-function loadImage(url) {
-  return new Promise(resolve => { let i = new Image(); i.onload = ()=>{resolve(i)}; i.src=url; });
-}
-
-function setOnScroll(){
-  $(window).on('scroll', (e)=>{
-    if ($(window).scrollTop() > window.innerHeight/5 && !disableAnimate){
-      clearTimeout(animateInterval);
-      disableAnimate = true;
-    }else if ($(window).scrollTop() < window.innerHeight/5 && disableAnimate){
-      animateInterval = window.setInterval(animate,17);
-      disableAnimate = false;
-    }
-  })
-}
-
-
 let canvas, ctx, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
     mousemove = true,
+    requestId,
     per = { x: 0, y: 0 ,step:0},
     cloudSpeed = 1.25,
     mtn, trackmouse = true, isMobile = false,
@@ -132,30 +108,58 @@ window.onload = function(){
       marcCloud4.img = resizeImg(marcCloud4.img);
     }
 
-    animateInterval = window.setInterval(animate,17);
+    loop();
     startReactApp();
+    startAnimate();
 
   })
 
 }
 
-  function newGradient(gradient){
-    let grad;
-    switch(gradient.type){
-      case "radial":
-        grad = c.createRadialGradient(gradient.x1, gradient.y1, gradient.r1, gradient.x1, gradient.y1, gradient.r2);
-        break;
-      case "linear":
-        grad = c.createLinearGradient(gradient.x1, gradient.y1, gradient.x2, gradient.y2);
-        break;
-    }
 
-    for(let i = 0; i < gradient.stops.length; i++){
-      grad.addColorStop(gradient.stops[i].s, gradient.stops[i].c);
-    }
 
-    return grad;
+function startReactApp(){
+  ReactDOM.render(
+    <App />,
+    document.getElementById('react-app')
+  )
+}
+
+function loadImage(url) {
+  return new Promise(resolve => { let i = new Image(); i.onload = ()=>{resolve(i)}; i.src=url; });
+}
+
+function setOnScroll(){
+  $(window).on('scroll', (e)=>{
+    if ($(window).scrollTop() > window.innerHeight/5 && !disableAnimate){
+      stopAnimate();
+      disableAnimate = true;
+    }else if ($(window).scrollTop() < window.innerHeight/5 && disableAnimate){
+      startAnimate();
+      disableAnimate = false;
+    }
+  })
+}
+
+
+function newGradient(gradient){
+  let grad;
+  switch(gradient.type){
+    case "radial":
+      grad = c.createRadialGradient(gradient.x1, gradient.y1, gradient.r1, gradient.x1, gradient.y1, gradient.r2);
+      break;
+    case "linear":
+      grad = c.createLinearGradient(gradient.x1, gradient.y1, gradient.x2, gradient.y2);
+      break;
   }
+
+  for(let i = 0; i < gradient.stops.length; i++){
+    grad.addColorStop(gradient.stops[i].s, gradient.stops[i].c);
+  }
+
+  return grad;
+}
+
 
 function animate(){
 
@@ -194,6 +198,25 @@ function animate(){
   updateMarcs();
   mtn.draw();
 
+}
+
+// function loop(){
+//   requestAnimationFrame(loop);
+//   animate();
+// }
+
+function startAnimate() {
+    if (!requestId) {
+       requestId = window.requestAnimationFrame(animate);
+    }
+    loop();
+}
+
+function stopAnimate() {
+    if (requestId) {
+       window.cancelAnimationFrame(requestId);
+       requestId = undefined;
+    }
 }
 
 function updateMarcs(){
@@ -258,4 +281,10 @@ function Mountains(peaks,seed){
 
   this.init();
 
+}
+
+function loop() {
+    if (!requestId) return
+    requestAnimationFrame( loop );
+    animate();
 }

@@ -1,0 +1,26 @@
+#about-me-btn{
+  background: #97c83e;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+  box-shadow: 4px 4px 5px rgba(0,0,0,.3);
+  font-weight: bold;
+
+  z-index:3;
+  position:fixed;
+  bottom:1em;
+  right:1em;
+
+  &:hover{
+    cursor: pointer;
+    background  :lighten(#97c83e,10%);
+  }
+
+}

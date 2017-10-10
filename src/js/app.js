@@ -190,6 +190,7 @@ export class App extends React.Component{
             })
           }
         </div>
+        <div id="about-me-btn">?</div>
       </div>
     )
   }
