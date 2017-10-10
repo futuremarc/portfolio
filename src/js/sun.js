@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {App} from './App';
 import $ from 'jquery';
 
-let canvas, ctx, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
+let canvas, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
@@ -23,7 +23,6 @@ window.onload = function(){
   }
 
   if (window.innerWidth < 900) cloudSpeed = .45;
-
 
 
   canvas = document.getElementById("canvas");
@@ -78,6 +77,23 @@ window.onload = function(){
 
   setOnScroll();
 
+  let initRain = [];
+  let maxParts = 150;
+  for(let a = 0; a < maxParts; a++) {
+    initRain.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      l: Math.random() * 1 + .5,
+      xs: Math.random() * 24 - 30,
+      ys: Math.random() * 32 + 32
+    })
+  }
+
+  window.particles = [];
+  for(let b = 0; b < maxParts; b++) {
+    particles[b] = initRain[b];
+  }
+
   loadImage('/../images/marc-cloud.png').then((image)=>{
 
     marcCloud.img = image;
@@ -110,6 +126,7 @@ window.onload = function(){
 
     loop();
     startReactApp();
+
     startAnimate();
 
   })
@@ -198,12 +215,22 @@ function animate(){
   updateMarcs();
   mtn.draw();
 
+  c.strokeStyle = 'rgba(174,194,224,0.5)';
+  c.lineWidth = 5;
+  c.lineCap = 'round';
+
+  for(let i = 0; i < particles.length; i++) {
+    let p = particles[i];
+    c.beginPath();
+    c.moveTo(p.x, p.y);
+    c.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
+    c.stroke();
+  }
+
+  moveRain();
+
 }
 
-// function loop(){
-//   requestAnimationFrame(loop);
-//   animate();
-// }
 
 function startAnimate() {
     if (!requestId) {
@@ -221,7 +248,7 @@ function stopAnimate() {
 
 function updateMarcs(){
   marcClouds.forEach(function(marc,index){
-    marc.x-= (index * cloudSpeed || 1.7);
+    marc.x-= ((0.5 + (index * cloudSpeed)) | 0 || 2); // rounded number with a bitwise or
     if (marc.x < 0 - marc.img.width * 2) marc.x = window.innerWidth;
   })
 }
@@ -287,4 +314,17 @@ function loop() {
     if (!requestId) return
     requestAnimationFrame( loop );
     animate();
+}
+
+
+function moveRain() {
+  for(let b = 0; b < particles.length; b++) {
+    let p = particles[b];
+    p.x += p.xs;
+    p.y += p.ys;
+    if(p.x > w * 1.5 || p.y > h) {
+      p.x = Math.random() * w * 1.5;
+      p.y = -20;
+    }
+  }
 }

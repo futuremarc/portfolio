@@ -1,5 +1,6 @@
 import React from 'react';
 import {Preview} from './Preview';
+import {AboutMe} from './AboutMe';
 import $ from 'jquery';
 
 const Title = (props) => {
@@ -20,6 +21,10 @@ export class App extends React.Component{
     super(props);
 
     this.state = {
+    about:{
+      title:"Once and always an...",
+      description:'<br/><br/>Animal nurse, musician, radio host, reddit moderator, tennis junkie, web developer, blockchain programmer, founder. Marc.'
+    },
      projects:
       {
         svrround : {
@@ -30,8 +35,10 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'Express.js', 'MongoDB','Handlebars','Gulp', 'Pug/Jade', 'SASS'],
           role:['Front-end','Back-end','Visual Design','Concept','Founder','Product','Business'],
           site:{url:'https://svrround.com',isAlive:true},
-          media:[{type:'youtube',url:'https://youtube.com/embed/POa-hH04fXA'},{type:'image',url:'/../images/svrround-gif2.gif'},{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/svrround2.jpg'}],
+          media:[{type:'youtube',url:'https://youtube.com/embed/POa-hH04fXA'}],
           press:[{title:'',url:''}]
+
+          //,{type:'image',url:'/../images/svrround-gif2.gif'},{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/svrround2.jpg'}
         },
         immigrater : {
           title:'Immigrater',
@@ -174,12 +181,23 @@ export class App extends React.Component{
       }
     }
 
+    this.onAboutMeClick = this.onAboutMeClick.bind(this);
+    this.closeAboutMe = this.closeAboutMe.bind(this);
+
   }
 
+  onAboutMeClick(){
+    const {shortName} = this.props;
+    this.setState({isAboutMeActive: true});
+  }
+
+  closeAboutMe(e){
+    this.setState({isAboutMeActive: null});
+  }
 
   render(){
 
-    const {projects} = this.state;
+    const {projects, about} = this.state;
 
     return (
       <div>
@@ -190,7 +208,8 @@ export class App extends React.Component{
             })
           }
         </div>
-        <div id="about-me-btn">?</div>
+        <div onClick={this.onAboutMeClick} id="about-me-btn">?</div>
+        { this.state.isAboutMeActive ? <AboutMe about={about} closeAboutMe={this.closeAboutMe} /> : null }
       </div>
     )
   }
