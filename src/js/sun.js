@@ -82,16 +82,15 @@ window.onload = function(){
   let ys, xs;
 
   if (isMobile){
-  maxParts = 50;
-  ys = Math.random() * 10 + 10
-  xs = Math.random() * 12 - 15
+    maxParts = 50;
+    ys = Math.random() * 10 + 10
+    xs = Math.random() * 12 - 15
 
-}else{
-  maxParts = 150;
-  ys = Math.random() * 40 + 40
-  xs = Math.random() * 24 - 30
-}
-
+  }else{
+    maxParts = 120;
+    ys = Math.random() * 40 + 40
+    xs = Math.random() * 24 - 30
+  }
 
   for(let a = 0; a < maxParts; a++) {
     initRain.push({
@@ -180,7 +179,7 @@ function newGradient(gradient){
       grad = c.createRadialGradient(gradient.x1, gradient.y1, gradient.r1, gradient.x1, gradient.y1, gradient.r2);
       break;
     case "linear":
-      grad = c.createLinearGradient(gradient.x1, gradient.y1, gradient.x2, gradient.y2);
+      grad = c.createLinearGradient(gradient.x1, gradient.y1 * 1.3, gradient.x2, gradient.y2);
       break;
   }
 
@@ -278,6 +277,10 @@ function resizeImg(i) {
 
 function Mountains(peaks,seed){
   let points = [];
+
+  if (isMobile) this.extra = 4;
+  else this.extra = 1;
+
   this.init = function(){
     let step = w / peaks,
         y = 0;
@@ -288,6 +291,8 @@ function Mountains(peaks,seed){
       points.push({x: i * step, y: y});
     }
   };
+
+  var self = this;
   this.draw = function(){
     c.save();
     //c.fillStyle = "rgba(20,20,20,1)";
@@ -305,6 +310,7 @@ function Mountains(peaks,seed){
 
     c.globalCompositeOperation = "lighter";
     c.fillStyle = "rgba(50,0,100,0.99)";
+
     for(let p = 0; p < points.length-1; p++){
       let va1 = Math.atan2(h/2-points[p].y - per.y, points[p].x - per.x),
           va2 = Math.atan2(h/2-points[p+1].y - per.y, points[p+1].x - per.x);
@@ -312,8 +318,8 @@ function Mountains(peaks,seed){
       c.beginPath();
       c.moveTo(points[p  ].x, h/2-points[p].y);
       c.lineTo(points[p+1].x, h/2-points[p+1].y);
-      c.lineTo(points[p+1].x + Math.cos(va2)*w, h/2-points[p+1].y + Math.sin(va2)*w);
-      c.lineTo(points[p  ].x + Math.cos(va1)*w, h/2-points[p].y + Math.sin(va1)*w);
+      c.lineTo(points[p+1].x + Math.cos(va2)*w, h/2-points[p+1].y + Math.sin(va2)*w * self.extra);
+      c.lineTo(points[p  ].x + Math.cos(va1)*w, h/2-points[p].y + Math.sin(va1)*w * self.extra);
       c.closePath();
       c.fill();
     }
