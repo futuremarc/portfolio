@@ -12,7 +12,7 @@
   color: white;
   box-shadow: 4px 4px 5px rgba(0,0,0,.2);
   font-weight: bold;
-  z-index:3;
+  z-index:4;
   position:fixed;
   bottom:1em;
   right:1em;
@@ -27,6 +27,16 @@
 .about-content{
   p{
     font-size:18px;
+  }
+
+  h1{
+    margin:0;
+    color:#673ab7;
+    color:rgba(255,255,255,1);
+    padding:6px 4px 5px 14px;
+    @media (max-width: 60em) {
+      margin:16px 0px 0px 0px;
+    }
   }
 
 }

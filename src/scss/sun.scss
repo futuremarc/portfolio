@@ -234,12 +234,17 @@
 .shocks {
   position: absolute;
   height: 100%;
-  width:100%;
-  z-index:3;
+  width: 100%;
   transform: translateZ(0);
+  padding: 0 0;
+  z-index: 1;
+  position:absolute;
+  pointer-events:none;
+  overflow: hidden;
 }
 
   .shock {
+
     position: absolute;
     top: 10%;
     left: 10%;
@@ -282,7 +287,7 @@
 
       &:nth-child(#{$i}) {
         $size: random(550) + 100;
-        top: random(105) * 1%;
+        top: random(100) * 1%;
         left: random(100) * 1%;
         height: $size * .035vmin + 4vmin;
         width: ($size * .035vmin + 4vmin) / 10;

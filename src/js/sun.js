@@ -78,14 +78,28 @@ window.onload = function(){
   setOnScroll();
 
   let initRain = [];
-  let maxParts = 150;
+  let maxParts;
+  let ys, xs;
+
+  if (isMobile){
+  maxParts = 50;
+  ys = Math.random() * 10 + 10
+  xs = Math.random() * 12 - 15
+
+}else{
+  maxParts = 150;
+  ys = Math.random() * 40 + 40
+  xs = Math.random() * 24 - 30
+}
+
+
   for(let a = 0; a < maxParts; a++) {
     initRain.push({
       x: Math.random() * w,
       y: Math.random() * h,
       l: Math.random() * 1 + .5,
-      xs: Math.random() * 24 - 30,
-      ys: Math.random() * 32 + 32
+      xs: xs,
+      ys:ys
     })
   }
 
@@ -183,7 +197,7 @@ function animate(){
   if(!trackmouse){
     per.x = mX = w/2 + Math.round(Math.cos(per.step)*w/2);
     per.y = mY = h/2 + Math.round(Math.sin(per.step)*h/2);
-    per.step += 0.03;
+    per.step += 0.02;
 
     if(per.step > twoPI)
       per.step = 0;
@@ -217,7 +231,6 @@ function animate(){
 
   c.strokeStyle = 'rgba(174,194,224,0.5)';
   c.lineWidth = 5;
-  c.lineCap = 'round';
 
   for(let i = 0; i < particles.length; i++) {
     let p = particles[i];
