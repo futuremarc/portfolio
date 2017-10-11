@@ -61,7 +61,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
           site:{url:'https://passti.me',isAlive:false},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'youtube',url:'https://www.youtube.com/watch?v=VtrBiOfD4wY'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'youtube',url:'https://www.youtube.com/embed/VtrBiOfD4wY'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
           press:[{title:'',url:''}]
         },
         twitch : {
