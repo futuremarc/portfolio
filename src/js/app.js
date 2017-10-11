@@ -24,7 +24,7 @@ export class App extends React.Component{
     about:{
       title:'✨🚀',
       description:
-      'I am a New York based developer & creative technologist who recently recieved an MPS from <a href="https://tisch.nyu.edu/itp" target="_blank">ITP at NYU</a>.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>My personal projects are mostly music and storytelling oriented. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
+      'I am a New York based full-stack (javascript) developer & creative technologist who recently recieved an MPS from <a href="https://tisch.nyu.edu/itp" target="_blank">ITP at NYU</a>.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>I\'ve built many full-stack realtime applications (<a href="https://standardresume.co/marcabbey" target="_blank">résumé</a>), most recently being a livestreaming 360˚ video platform for my startup <a href="https://svrround.com" target="_blank">Svrround</a>. My personal projects are mostly music and storytelling oriented apps. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
       {
@@ -61,7 +61,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
           site:{url:'https://passti.me',isAlive:false},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'youtube',url:'https://www.youtube.com/embed/VtrBiOfD4wY'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'youtube',url:'https://www.youtube.com/embed/VtrBiOfD4wY'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'}],
           press:[{title:'',url:''}]
         },
         twitch : {
@@ -142,7 +142,7 @@ export class App extends React.Component{
           description:'A performance piece showcasing a 7 episode interactive music piece that animates a story of a girl who finds many pieces. <br/><br/> This recording was performed at SXSW 2016.',
           tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],
           role:['Front-end','Back-end','Design','Concept','Story','Music','Sound Design','Performance'],
-          site:{url:'http://emoji.magicisreal.net',isAlive:true},
+          site:{},
           media:[{type:'youtube',url:'https://www.youtube.com/embed/8ki_Bk6EPcw'}],
           press:[{title:'',url:''}]
         },

@@ -27,7 +27,7 @@ export class Project extends React.Component{
 
   componentDidMount() {
 
-    $( '.modal' ).on( 'mousewheel', function ( e ) {
+    $( '.modal, iframe' ).on( 'mousewheel', function ( e ) {
       let event = e.originalEvent, d = event.wheelDelta || -event.detail;
       this.scrollTop += ( d < 0 ? 1 : -1 ) * 30;
       e.preventDefault();
