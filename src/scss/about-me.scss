@@ -27,7 +27,9 @@
 .about-content{
   p{
     font-size:18px;
-    padding: 3em;
+    @media (min-width: 60em) {
+      padding: 3em;
+    }
   }
 
   a{
