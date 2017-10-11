@@ -209,7 +209,7 @@ export class App extends React.Component{
             })
           }
         </div>
-        <div onClick={this.onAboutMeClick} id="about-me-btn">me</div>
+        <div onClick={this.onAboutMeClick} id="about-me-btn"><span>?</span></div>
         { this.state.isAboutMeActive ? <AboutMe about={about} closeAboutMe={this.closeAboutMe} /> : null }
       </div>
     )
