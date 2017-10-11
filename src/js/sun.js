@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {App} from './App';
 import $ from 'jquery';
 
-let canvas, clouds, c, w, h, welcome, debounce = false, animateInterval, disableAnimate = false,
+let canvas, c, w, h, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
@@ -11,6 +11,7 @@ let canvas, clouds, c, w, h, welcome, debounce = false, animateInterval, disable
     requestId,
     per = { x: 0, y: 0 ,step:0},
     cloudSpeed = 1.25,
+    particles = [],
     mtn, trackmouse = true, isMobile = false,
     marcClouds = [],
     marcCloud = {x:window.innerWidth,img:null}, marcCloud2 = {x:window.innerWidth,img:null}, marcCloud3 = {x:window.innerWidth,img:null}, marcCloud4 = {x:window.innerWidth,img:null}, marcCloud5 = {x:window.innerWidth,img:null};
@@ -26,8 +27,6 @@ window.onload = function(){
 
 
   canvas = document.getElementById("canvas");
-  //clouds = document.getElementById("clouds");
-  welcome = document.getElementById("welcome-bg");
 
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
@@ -39,6 +38,7 @@ window.onload = function(){
 
 
     if (disableAnimate) animate();
+    initRain();
 
     if (isMobile) return
     mtn = new Mountains(60,"10");
@@ -70,42 +70,11 @@ window.onload = function(){
   per = { x: w/2, y: h/2, step: 1 }
   mtn = new Mountains(60,"10");
 
-
   canvas.style.display = 'flex';
-  welcome.style.display = 'flex';
-  //clouds.style.display = 'block';
 
   setOnScroll();
+  initRain();
 
-  let initRain = [];
-  let maxParts;
-  let ys, xs;
-
-  if (isMobile){
-    maxParts = 50;
-    ys = Math.random() * 10 + 10
-    xs = Math.random() * 12 - 15
-
-  }else{
-    maxParts = 120;
-    ys = Math.random() * 40 + 40
-    xs = Math.random() * 24 - 30
-  }
-
-  for(let a = 0; a < maxParts; a++) {
-    initRain.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      l: Math.random() * 1 + .5,
-      xs: xs,
-      ys:ys
-    })
-  }
-
-  window.particles = [];
-  for(let b = 0; b < maxParts; b++) {
-    particles[b] = initRain[b];
-  }
 
   loadImage('/../images/marc-cloud.png').then((image)=>{
 
@@ -143,6 +112,42 @@ window.onload = function(){
     startAnimate();
 
   })
+
+}
+
+
+function initRain(){
+
+  let rain = [];
+  let maxRain;
+  let ys, xs;
+
+  if (isMobile){
+    maxRain = 50;
+    ys = Math.random() * 10 + 10
+    xs = Math.random() * 12 - 15
+
+  }else{
+    maxRain = 120;
+    ys = Math.random() * 40 + 40
+    xs = Math.random() * 24 - 30
+  }
+
+  for(let a = 0; a < maxRain; a++) {
+    rain.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      l: Math.random() * 1 + .5,
+      xs: xs,
+      ys:ys
+    })
+  }
+
+  particles = [];
+
+  for(let b = 0; b < maxRain; b++) {
+    particles[b] = rain[b];
+  }
 
 }
 

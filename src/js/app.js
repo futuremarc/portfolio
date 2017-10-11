@@ -22,8 +22,9 @@ export class App extends React.Component{
 
     this.state = {
     about:{
-      title:"Once and always an...",
-      description:'<br/><br/>Animal nurse, musician, radio host, reddit moderator, tennis junkie, web developer, blockchain programmer, founder. Marc.'
+      title:'✨🚀',
+      description:
+      'I am a New York based developer & creative technologist who recently graduated from ITP at NYU.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>My personal projects are usually music and storytelling oriented. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>I once was and will always be an animal nurse, musician, radio host, reddit moderator, tennis junkie, TEDx organizer, web developer, blockchain programmer, founder.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
       {
@@ -31,7 +32,7 @@ export class App extends React.Component{
           title:'Svrround',
           shortName:'svrround',
           shortDescription:'360˚ video livestreaming platform',
-          description:'An enterprise platform to easily create and share live 360˚ video streams. It combines rich interactivity on the viewers end with unique analytics on the streamers end to best utilize the 360˚ medium.',
+          description:'An enterprise platform to easily create and share live 360˚ video streams. It combines rich interactivity on the viewers end with unique analytics on the streamers end to best utilize the 360˚ medium.<br/><br/>Svrround went through the <a href="http://nycmedialab.org/combine/" target="_blank">NYC Media Lab Combine Accelerator</a> and is funded by <a href="http://www.roughdraft.vc/" target="_blank">Rough Draft Ventures</a>, <a href="http://nycmedialab.org/" target="_blank"> NYC Media Lab</a>, and <a href="http://innovation.verizon.com/content/vic/en/innovation-labs.html/Verizon" target="_blank">Verizon Innovation Labs</a>.',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'Express.js', 'MongoDB','Handlebars','Gulp', 'Pug/Jade', 'SASS'],
           role:['Front-end','Back-end','Visual Design','Concept','Founder','Product','Business'],
           site:{url:'https://svrround.com',isAlive:true},
@@ -138,7 +139,7 @@ export class App extends React.Component{
           title:'Magic is Real',
           shortName:'magic',
           shortDescription:'music performance and software',
-          description:'A performance piece showcasing a 7 episode interactive music piece that animates a story of a girl who finds many pieces',
+          description:'A performance piece showcasing a 7 episode interactive music piece that animates a story of a girl who finds many pieces. <br/><br/> This recording was performed at SXSW 2016.',
           tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],
           role:['Front-end','Back-end','Design','Concept','Story','Music','Sound Design','Performance'],
           site:{url:'http://emoji.magicisreal.net',isAlive:true},
