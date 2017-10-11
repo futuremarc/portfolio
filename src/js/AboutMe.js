@@ -20,7 +20,7 @@ export class AboutMe extends React.Component{
 
   componentDidMount() {
 
-    $( '.modal-overlay' ).on( 'mousewheel', function ( e ) {
+    $( '.modal' ).on( 'mousewheel', function ( e ) {
       let event = e.originalEvent, d = event.wheelDelta || -event.detail;
       this.scrollTop += ( d < 0 ? 1 : -1 ) * 30;
       e.preventDefault();

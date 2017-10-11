@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {App} from './App';
 import $ from 'jquery';
 
-let canvas, c, w, h, debounce = false, animateInterval, disableAnimate = false,
+let canvas, welcome, c, w, h, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
     mX, mY,
     resize = true,
@@ -27,6 +27,7 @@ window.onload = function(){
 
 
   canvas = document.getElementById("canvas");
+  welcome = document.getElementById("welcome-bg");
 
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
@@ -71,6 +72,7 @@ window.onload = function(){
   mtn = new Mountains(60,"10");
 
   canvas.style.display = 'flex';
+  welcome.style.display = 'flex';
 
   setOnScroll();
   initRain();

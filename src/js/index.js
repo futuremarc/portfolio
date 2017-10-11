@@ -1,5 +1,5 @@
 import '../scss/index.scss';
-import './sun.js';
+import './intro.js';
 
 require.context('../images', false, /\.(jpe?g|png|gif|svg)/); //import all images so file-loader can work
 

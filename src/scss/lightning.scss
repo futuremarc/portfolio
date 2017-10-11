@@ -1,0 +1,146 @@
+
+.shocks {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateZ(0);
+  padding: 0 0;
+  z-index: 1;
+  position:absolute;
+  pointer-events:none;
+  overflow: hidden;
+}
+
+  .shock {
+
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    clip-path: polygon(
+      0 100%,
+      100% 0,
+      300% 0,
+      300% 200%,
+      300% 300%,
+      0 300%
+    );
+    opacity: 0;
+
+    &:before,
+    &:after {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: inherit;
+      content: "";
+    }
+
+    &:before {
+      top: 25%;
+      left: 100%;
+      border-radius: 0 .25em 0 .25em;
+    }
+
+    &:after {
+      top: 50%;
+      left: 200%;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        0 100%
+      );
+    }
+
+    @for $i from 1 through 10 {
+
+      &:nth-child(#{$i}) {
+        $size: random(550) + 100;
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+        height: $size * .035vmin + 4vmin;
+        width: ($size * .035vmin + 4vmin) / 10;
+        background:
+          linear-gradient(
+            45deg,
+              hsl(random(255), 90, 60),
+              hsl(random(255), 90, 60)
+          );
+
+        $time: $size * .002s + .5s;
+        $delay: .05s * $i - .05s;
+
+        @if(random(2) == 1) {
+          animation:
+            flash $time $delay infinite ease-in,
+            strike-left $time $delay infinite ease-in;
+          transform:
+            translate(-50%, -50%)
+            translate(1000%, -300%)
+            skew(-25deg);
+        } @else {
+            animation:
+              flash $time $delay infinite ease-in,
+              strike-right $time $delay infinite ease-in;
+            transform:
+              translate(-50%, -50%)
+              translate(-1000%, -300%)
+              skew(25deg);
+        }
+
+        &:before {
+          animation: strike-down $time $delay infinite ease-in;
+        }
+
+        &:after {
+          animation: final-blow $time $delay infinite ease-in;
+        }
+      }
+    }
+  }
+
+  @keyframes flash {
+
+    @for $i from 2 through 4 {
+      #{$i * 20%} {
+        @if($i % 2 == 0) {
+          opacity: 0;
+        } @else {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @keyframes strike-right {
+
+    100% {
+      transform:
+        translate(-50%, -50%)
+        translate(0, 0)
+        skew(25deg);
+    }
+  }
+
+  @keyframes strike-left {
+
+    100% {
+      transform:
+        translate(-50%, -50%)
+        translate(0, 0)
+        skew(-25deg);
+    }
+  }
+
+  @keyframes strike-down {
+
+    100% {
+      top: 125%;
+    }
+  }
+
+  @keyframes final-blow {
+
+    100% {
+      top: 225%;
+    }
+  }
