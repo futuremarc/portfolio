@@ -24,7 +24,7 @@ export class App extends React.Component{
     about:{
       title:'✨🚀',
       description:
-      'I am a New York based developer & creative technologist who recently graduated from ITP at NYU.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>My personal projects are usually music and storytelling oriented. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>I once was and will always be an animal nurse, musician, radio host, reddit moderator, tennis junkie, TEDx organizer, web developer, blockchain programmer, founder.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
+      'I am a New York based developer & creative technologist who recently graduated from ITP at NYU.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>My personal projects are mostly music and storytelling oriented. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>I once was and will always be an animal nurse, musician, radio host, reddit moderator, tennis junkie, TEDx organizer, web developer, blockchain programmer, founder.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
       {
@@ -209,7 +209,7 @@ export class App extends React.Component{
             })
           }
         </div>
-        <div onClick={this.onAboutMeClick} id="about-me-btn">?</div>
+        <div onClick={this.onAboutMeClick} id="about-me-btn">me</div>
         { this.state.isAboutMeActive ? <AboutMe about={about} closeAboutMe={this.closeAboutMe} /> : null }
       </div>
     )
