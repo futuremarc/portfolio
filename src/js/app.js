@@ -24,7 +24,7 @@ export class App extends React.Component{
     about:{
       title:'✨🚀',
       description:
-      'I am a New York based developer & creative technologist who recently graduated from ITP at NYU.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>My personal projects are mostly music and storytelling oriented. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>I once was and will always be an animal nurse, musician, radio host, reddit moderator, tennis junkie, TEDx organizer, web developer, blockchain programmer, founder.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
+      'I am a New York based developer & creative technologist who recently recieved an MPS from <a href="https://tisch.nyu.edu/itp" target="_blank">ITP at NYU</a>.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>My personal projects are mostly music and storytelling oriented. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>I once was and will always be an animal nurse, musician, radio host, reddit moderator, tennis junkie, TEDx organizer, web developer, blockchain programmer, founder.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
       {
@@ -45,7 +45,7 @@ export class App extends React.Component{
           title:'Immigrater',
           shortDescription:'interactive billboard web app',
           shortName:'immigrater',
-          description:'An interactive billboard located in Times Square that allowed anyone to swipe to accept or reject immigrants -- tinder style. The project critiqued the banale nature of the US attitude towards immigration.',
+          description:'An interactive billboard located at the Viacom building in Times Square that allowed anyone to swipe to accept or reject immigrants, tinder style. The project critiqued the banale nature of the US attitude towards immigration. <br/><br/> Immigrater was built for <a href="http://viacom.com" target="_blank">Viacom</a> and <a href="http://nycmedialab.org">NYC Media Lab</a>',
           tech:['Node.js', 'Websockets','Javascript', 'HTML', 'CSS','Express.js'],
           role:['Front-end','Back-end','Concept'],
           site:{url:'https://immigrater.us', isAlive:false},
@@ -57,18 +57,18 @@ export class App extends React.Component{
           title:'Passtime',
           shortName:'passtime',
           shortDescription:'avatar chrome extension',
-          description:'A chrome extension that puts avatars of friends at the bottom of web browsers so friends can watch videos, listen to songs, and read articles together more easily',
+          description:'A chrome extension that puts avatars of friends at the bottom of web browsers so friends can watch videos, listen to songs, and read articles together more easily.<br/><br/> Passtime was built for my thesis at <a href="https://tisch.nyu.edu/itp" target="_blank">NYU ITP</a> with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>.',
           tech:['Node.js', 'Websockets', 'Three.js', 'Javascript', 'HTML', 'CSS','Gulp', 'Express.js','Handlebars'],
           role:['Front-end','Back-end','Design','Concept','Product'],
           site:{url:'https://passti.me',isAlive:false},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'youtube',url:'https://www.youtube.com/watch?v=VtrBiOfD4wY'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'},{type:'image',url:'/../images/passtime-gif.gif'}],
           press:[{title:'',url:''}]
         },
         twitch : {
           title: 'Twitch Plays Shakespeare',
           shortName:'twitch',
           shortDescription:'interactive theatre web app',
-          description:'Inspired by the popular Twitch Plays Pokemon, in this interactive take on Shakespeare’s Hamlet, an in-person audience votes continuously on Hamlet’s actions throughout the course of the play.',
+          description:'Inspired by the popular Twitch Plays Pokemon, in this interactive take on Shakespeare’s Hamlet, an in-person audience votes continuously on Hamlet’s actions throughout the course of the play. </br></br> Twitch Plays Shakespeare was built with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>',
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js'],
           role:['Front-end','Back-end'],
           site:{url:'twitchplays.com'},
@@ -91,7 +91,7 @@ export class App extends React.Component{
           title:'Canale Quattro',
           shortName:'canale',
           shortDescription:'music broadcast webpage',
-          description:'Live broadcast website for the band Pheonix\'s single "J-Boy". Viewers watched together around the world with an immersive, functional, retro television.',
+          description:'Live broadcast website for the premiere of the band Pheonix\'s single "J-Boy". Viewers watched together around the world with an immersive, functional, retro television.',
           tech:['WebGL', 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Back-end','Visual Design','Sound Design'],
           site:{url:'https://canalequattro.tv',isAlive:true},
@@ -127,7 +127,7 @@ export class App extends React.Component{
           title:'Glitch the World',
           shortName:'glitch',
           shortDescription:'interactive cinema web app',
-          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.',
+          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.<br/><br/> Glitch the World was built with support from Twitch Plays Shakespeare was built with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>.',
           tech:['Touchdesigner','Websockets','Python', 'Node.js', 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Back-end','Design','Story', 'Concept'],
           site:{},
