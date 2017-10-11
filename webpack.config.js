@@ -67,7 +67,6 @@ module.exports = {
           'image-webpack-loader?{gifsicle: {optimizationLevel: 3}, optipng: {optimizationLevel: 7},pngquant: {quality: "40",speed: 4},mozjpeg: {quality: 40}}'
         ]
       },
-
       {
         test: /\.(woff2?|svg)$/,
         loader: 'url-loader?limit=10000&name=[name].[ext]',
