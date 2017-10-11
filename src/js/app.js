@@ -83,7 +83,7 @@ export class App extends React.Component{
           tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS','Arduino','Three.js'],
           role:['Front-end','Fabrication','Sound Design','Design'],
           site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}, {type:'image',url:'/../images/dimenions4.png'},{type:'image',url:'/../images/dimenions3.png'},{type:'image',url:'/../images/dimenions2.png'}],
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}],
           press:[{title:'',url:''}]
         },
 
