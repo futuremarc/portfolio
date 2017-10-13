@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './App';
+import {setLightningSize, drawLightning} from './lightning.js';
+import {initRain, drawRain, moveRain} from './rain.js';
 import $ from 'jquery';
+
+
 
 let canvas, welcome, c, w, h, debounce = false, animateInterval, disableAnimate = false,
     twoPI = Math.PI * 2,
@@ -11,10 +15,9 @@ let canvas, welcome, c, w, h, debounce = false, animateInterval, disableAnimate 
     requestId,
     per = { x: 0, y: 0 ,step:0},
     cloudSpeed = 1.25,
-    particles = [],
     mtn, trackmouse = true, isMobile = false,
     marcClouds = [],
-    marcCloud = {x:window.innerWidth,img:null}, marcCloud2 = {x:window.innerWidth,img:null}, marcCloud3 = {x:window.innerWidth,img:null}, marcCloud4 = {x:window.innerWidth,img:null}, marcCloud5 = {x:window.innerWidth,img:null};
+    marcCloud = {x:window.innerWidth,y:20,img:null}, marcCloud2 = {x:window.innerWidth,y:100,img:null}, marcCloud3 = {x:window.innerWidth,y:150,img:null}, marcCloud4 = {x:window.innerWidth,y:200,img:null};
 
 window.onload = function(){
 
@@ -39,12 +42,14 @@ window.onload = function(){
 
 
     if (disableAnimate) animate();
-    initRain();
+    initRain(isMobile);
 
     if (isMobile) return
     mtn = new Mountains(60,"10");
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
+
+    setLightningSize();
    });
 
    if (isMobile) trackmouse = false;
@@ -75,7 +80,8 @@ window.onload = function(){
   welcome.style.display = 'flex';
 
   setOnScroll();
-  initRain();
+  initRain(isMobile);
+  setLightningSize();
 
 
   loadImage('/../images/marc-cloud.png').then((image)=>{
@@ -110,7 +116,6 @@ window.onload = function(){
 
     loop();
     startReactApp();
-
     startAnimate();
 
   })
@@ -118,40 +123,6 @@ window.onload = function(){
 }
 
 
-function initRain(){
-
-  let rain = [];
-  let maxRain;
-  let ys, xs;
-
-  if (isMobile){
-    maxRain = 50;
-    ys = Math.random() * 10 + 10
-    xs = Math.random() * 12 - 15
-
-  }else{
-    maxRain = 120;
-    ys = Math.random() * 40 + 40
-    xs = Math.random() * 24 - 30
-  }
-
-  for(let a = 0; a < maxRain; a++) {
-    rain.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      l: Math.random() * 1 + .5,
-      xs: xs,
-      ys:ys
-    })
-  }
-
-  particles = [];
-
-  for(let b = 0; b < maxRain; b++) {
-    particles[b] = rain[b];
-  }
-
-}
 
 
 
@@ -203,7 +174,7 @@ function animate(){
   if(!trackmouse){
     per.x = mX = w/2 + Math.round(Math.cos(per.step)*w/2);
     per.y = mY = h/2 + Math.round(Math.sin(per.step)*h/2);
-    per.step += 0.02;
+    per.step += 0.013;
 
     if(per.step > twoPI)
       per.step = 0;
@@ -226,28 +197,19 @@ function animate(){
       ]
     }
   );
+
   c.fillRect(0,0,w,h);
-  c.drawImage(marcCloud.img, marcCloud.x, 20);
-  c.drawImage(marcCloud2.img, marcCloud2.x, 100);
-  c.drawImage(marcCloud3.img, marcCloud3.x, 150);
-  c.drawImage(marcCloud4.img, marcCloud4.x, 220);
+  if (mY > window.innerHeight/2) drawLightning();
 
+  drawMarcs();
   updateMarcs();
-  mtn.draw();
 
-  c.strokeStyle = 'rgba(174,194,224,0.5)';
-  c.lineWidth = 5;
+  if (mY > window.innerHeight/2){
 
-  for(let i = 0; i < particles.length; i++) {
-    let p = particles[i];
-    c.beginPath();
-    c.moveTo(p.x, p.y);
-    c.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
-    c.stroke();
+    drawRain();
+    moveRain();
   }
-
-  moveRain();
-
+  mtn.draw();
 }
 
 
@@ -263,6 +225,15 @@ function stopAnimate() {
        window.cancelAnimationFrame(requestId);
        requestId = undefined;
     }
+}
+
+function drawMarcs(){
+
+  c.drawImage(marcCloud.img, marcCloud.x, marcCloud.y);
+  c.drawImage(marcCloud2.img, marcCloud2.x, marcCloud2.y);
+  c.drawImage(marcCloud3.img, marcCloud3.x, marcCloud3.y);
+  c.drawImage(marcCloud4.img, marcCloud4.x, marcCloud4.y);
+
 }
 
 function updateMarcs(){
@@ -340,17 +311,4 @@ function loop() {
     if (!requestId) return
     requestAnimationFrame( loop );
     animate();
-}
-
-
-function moveRain() {
-  for(let b = 0; b < particles.length; b++) {
-    let p = particles[b];
-    p.x += p.xs;
-    p.y += p.ys;
-    if(p.x > w * 1.5 || p.y > h) {
-      p.x = Math.random() * w * 1.5;
-      p.y = -20;
-    }
-  }
 }

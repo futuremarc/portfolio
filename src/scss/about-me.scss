@@ -1,4 +1,5 @@
 #about-me-btn{
+
   background: #8AB73A;
   text-align: center;
   width: 60px;
@@ -46,6 +47,9 @@
 
   a{
     color:skyblue;
+    &:hover{
+      color:skyblue;
+    }
   }
 
   h1{
