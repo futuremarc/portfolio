@@ -89,6 +89,16 @@
     }
 }
 
+#lovelocks{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/lovelocks2.png');
+    &:hover{
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/lovelocks-gif.gif');
+    }
+    @media(max-width:767px){
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/../images/lovelocks-gif.gif');
+    }
+}
+
 
 #svrround{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/../images/svrround1.png');

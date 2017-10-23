@@ -27,7 +27,18 @@ export class App extends React.Component{
       'I am a New York based full-stack (javascript) developer & creative technologist who recently recieved an MPS from <a href="https://tisch.nyu.edu/itp" target="_blank">ITP at NYU</a>.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>I\'ve built many full-stack realtime applications (<a href="https://standardresume.co/marcabbey" target="_blank">résumé</a>), most recently being a livestreaming 360˚ video platform for my startup <a href="https://svrround.com" target="_blank">Svrround</a>. My personal projects are mostly music and storytelling oriented apps. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
-      {
+     {
+       lovelocks : {
+         title:'CryptoLoveLocks',
+         shortName:'lovelocks',
+         shortDescription:'blockchain web app (dApp)',
+         description:'CryptoLoveLocks takes the idea of the love lock and puts it on the blockchain so they can never be taken down again. Using a smart contract, 50,000 love locks are available to customize and engrave with a message to be kept on the Ethereum blockchain forever.',
+         tech:['Solidity', 'Truffle', 'React.js', 'Webpack'],
+         role:['Front-end','Back-end','Visual Design','Concept'],
+         site:{url:'http://cryptolovelocks.co',isAlive:true},
+         media:[{type:'image',url:'/../images/lovelocks-gif.gif'},{type:'image',url:'/../images/lovelocks-gif2.gif'}],
+         press:[{title:'',url:''}]
+       },
         svrround : {
           title:'Svrround',
           shortName:'svrround',
@@ -127,7 +138,7 @@ export class App extends React.Component{
           title:'Glitch the World',
           shortName:'glitch',
           shortDescription:'interactive cinema web app',
-          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.<br/><br/> Glitch the World was built with support from Twitch Plays Shakespeare was built with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>.',
+          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.<br/><br/> Glitch the World was built with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>.',
           tech:['Touchdesigner','Websockets','Python', 'Node.js', 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Back-end','Design','Story', 'Concept'],
           site:{},
@@ -139,7 +150,7 @@ export class App extends React.Component{
           title:'Magic is Real',
           shortName:'magic',
           shortDescription:'music performance and software',
-          description:'A performance piece showcasing a 7 episode interactive music piece that animates a story of a girl who finds many pieces. <br/><br/> This recording was performed at SXSW 2016.',
+          description:'A performance piece showcasing a 7 episode interactive music app that animates a story of a girl who finds many pieces. <br/><br/> This recording was performed at SXSW 2016.',
           tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],
           role:['Front-end','Back-end','Design','Concept','Story','Music','Sound Design','Performance'],
           site:{},
@@ -164,7 +175,7 @@ export class App extends React.Component{
           description:'A website to discover and save your favorite Japanese Emoji all while watch. The Emoji join the party and dance along to the song.',
           tech:[ 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Design','Concept'],
-          site:{},
+          site:{url:'http://emoji.magicisreal.net',alive:false},
           media:[{type:'image',url:'/../images/emoji-gif.gif'}],
           press:[{title:'',url:''}]
         }
