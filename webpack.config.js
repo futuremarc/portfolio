@@ -60,7 +60,7 @@ module.exports = {
         loader: cssConfig,
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|pdf|svg)$/i,
         exclude:/node_modules/,
         loader: [
           'file-loader?name=images/[name].[ext]',

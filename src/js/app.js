@@ -31,9 +31,9 @@ export class App extends React.Component{
        lovelocks : {
          title:'Crypto LoveLocks',
          shortName:'lovelocks',
-         shortDescription:'blockchain web app (ÐApp)',
+         shortDescription:'blockchain web app (DApp)',
          description:'Crypto LoveLocks takes the idea of the love lock and puts it on the blockchain so they can never be taken down again. Using a smart contract, 50,000 love locks are available to customize and engrave with a message to be kept on the Ethereum blockchain forever.',
-         tech:['Solidity', 'Truffle', 'React.js', 'Webpack'],
+         tech:['Solidity', 'Truffle', 'React.js', 'Webpack','Blockchain'],
          role:['Front-end','Back-end','Visual Design','Concept'],
          site:{url:'http://cryptolovelocks.co',isAlive:true},
          media:[{type:'image',url:'/../images/lovelocks-gif.gif'}],

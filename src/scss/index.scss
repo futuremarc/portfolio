@@ -10,4 +10,13 @@ html,body{
   overflow-x: hidden;
   width:100vw;
   background-color:#111 !important;
+  a{
+    color:skyblue;
+    &:hover{
+      color:skyblue;
+    }
+    &:visited{
+      color:skyblue;
+    }
+  }
 }
