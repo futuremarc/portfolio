@@ -24,7 +24,7 @@ export class App extends React.Component{
     about:{
       title:'✨🚀',
       description:
-      'I\'m a full-stack developer, educator, entrepreneur and in general, a creator. I love connecting people live in new ways and building scalable realtime applications. <br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), decentralized app development (truffle, solidity, IPFS), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>I\'ve built many full-stack realtime applications (<a href="/../images/resume.pdf" target="_blank">résumé</a>), most recently being a livestreaming 360˚ video platform for my startup <a href="https://svrround.com" target="_blank">Svrround</a>. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
+      'I\'m a full-stack developer, educator, entrepreneur and in general, a creator. I love connecting people live in new ways and building scalable realtime applications. <br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), decentralized app development (truffle, solidity, IPFS), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>I\'ve built many full-stack realtime applications (<a href="https://nofile.io/g/F25vxnvgvvYzh3FmuCVvv8SYSLz59AiNLLgmlR49IKvJc0H9ylNVsFouHaK7m5le/resume.pdf" target="_blank">résumé</a>), most recently being a livestreaming 360˚ video platform for my startup <a href="https://svrround.com" target="_blank">Svrround</a>. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
      {
@@ -94,7 +94,7 @@ export class App extends React.Component{
           description:'Live broadcast website for the premiere of the band Pheonix\'s single "J-Boy". Viewers watched together around the world with an immersive, functional, retro television.',
           tech:['WebGL', 'Javascript', 'HTML', 'CSS'],
           role:['Front-end','Back-end','Visual Design','Sound Design'],
-          site:{url:'https://canalequattro.tv',isAlive:true},
+          site:{url:'https://canalequattro.tv',isAlive:false},
           media:[{type:'youtube',url:'https://youtube.com/embed/q6EjzpLOwoo'}],
           press:[{title:'',url:''}]
         },

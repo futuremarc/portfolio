@@ -18,5 +18,11 @@ html,body{
     &:visited{
       color:skyblue;
     }
+    &:active{
+      color:skyblue;
+    }
+    &:link{
+      color:skyblue;
+    }
   }
 }
