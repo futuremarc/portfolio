@@ -60,7 +60,7 @@ launchBolt = function(x, y, length, direction) {
   });
 
   // Launch it!!
-  return recursiveLaunchBolt(x, y, length, direction, boltContext);
+  //return recursiveLaunchBolt(x, y, length, direction, boltContext);
 };
 
 // Recursive bolt action.

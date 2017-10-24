@@ -24,8 +24,8 @@ export function initRain(isMobile){
     rain.push({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      l: Math.random() * .45,
-      w: Math.random() * 6,
+      l: Math.random() * .25,
+      w: Math.random() * 4,
       xs:xs,
       ys:ys
     })
@@ -61,7 +61,7 @@ export function moveRain() {
     p.y += p.ys;
     if(p.x > window.innerWidth * 1.5 || p.y > window.innerHeight) {
       p.x = Math.random() * window.innerWidth * 1.65;
-      p.y = -20;
+      p.y = -50;
     }
   }
 }

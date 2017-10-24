@@ -188,7 +188,7 @@ function animate(){
       x1: mX,
       y1: mY,
       r1: 0,
-      r2: w,
+      r2: w * 1.5,
       stops: [
         { s: 0, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +","+ Math.floor((h-mY)) +",.9)" },
         { s: 0.05, c: "rgba("+ Math.floor((h-mY)) +","+ Math.floor((h-mY-128)) +",128,.9)" },

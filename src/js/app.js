@@ -24,19 +24,19 @@ export class App extends React.Component{
     about:{
       title:'✨🚀',
       description:
-      'I am a New York based full-stack (javascript) developer & creative technologist who recently recieved an MPS from <a href="https://tisch.nyu.edu/itp" target="_blank">ITP at NYU</a>.<br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>I\'ve built many full-stack realtime applications (<a href="https://standardresume.co/marcabbey" target="_blank">résumé</a>), most recently being a livestreaming 360˚ video platform for my startup <a href="https://svrround.com" target="_blank">Svrround</a>. My personal projects are mostly music and storytelling oriented apps. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real. I am currently exploring using the Ethereum blockchain for releases and in-app collectables.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
+      'I\'m a full-stack developer, educator, entrepreneur and in general, a creator. I love connecting people live in new ways and building scalable realtime applications. <br/><br/>I am currently available for front-end development (webpack, react.js, es6), full-stack (front-end + node.js, mongoDB, express.js, pm2), decentralized app development (truffle, solidity, IPFS), as a creative technologist (arduino, raspberry pi) or teaching (web fundamentals).<br/><br/>I\'ve built many full-stack realtime applications (<a href="/../images/resume.pdf" target="_blank">résumé</a>), most recently being a livestreaming 360˚ video platform for my startup <a href="https://svrround.com" target="_blank">Svrround</a>. I am usually in the middle of developing interactive music web experiences or video-games for musicians under the name Magic is Real.<br/><br/>Some of my work has featured at SXSW, Times Square, Microsoft Hub, AOL Virtual Reality Summit, Creative Tech Week, NY IFP Media Center, IAC Media Center, NYC Media Lab Summit, NYU Production Lab, and more.<br/><br/>email me! <a href="mailto:marcabbey@gmail.com">marcabbey@gmail.com</a>'
     },
      projects:
      {
        lovelocks : {
-         title:'CryptoLoveLocks',
+         title:'Crypto LoveLocks',
          shortName:'lovelocks',
-         shortDescription:'blockchain web app (dApp)',
-         description:'CryptoLoveLocks takes the idea of the love lock and puts it on the blockchain so they can never be taken down again. Using a smart contract, 50,000 love locks are available to customize and engrave with a message to be kept on the Ethereum blockchain forever.',
+         shortDescription:'blockchain web app (ÐApp)',
+         description:'Crypto LoveLocks takes the idea of the love lock and puts it on the blockchain so they can never be taken down again. Using a smart contract, 50,000 love locks are available to customize and engrave with a message to be kept on the Ethereum blockchain forever.',
          tech:['Solidity', 'Truffle', 'React.js', 'Webpack'],
          role:['Front-end','Back-end','Visual Design','Concept'],
          site:{url:'http://cryptolovelocks.co',isAlive:true},
-         media:[{type:'image',url:'/../images/lovelocks-gif.gif'},{type:'image',url:'/../images/lovelocks-gif2.gif'}],
+         media:[{type:'image',url:'/../images/lovelocks-gif.gif'}],
          press:[{title:'',url:''}]
        },
         svrround : {
@@ -52,17 +52,6 @@ export class App extends React.Component{
 
           //,{type:'image',url:'/../images/svrround-gif2.gif'},{type:'image',url:'/../images/svrround1.png'},{type:'image',url:'/../images/svrround2.jpg'}
         },
-        immigrater : {
-          title:'Immigrater',
-          shortDescription:'interactive billboard web app',
-          shortName:'immigrater',
-          description:'An interactive billboard located at the Viacom building in Times Square that allowed anyone to swipe to accept or reject immigrants, tinder style. The project critiqued the banale nature of the US attitude towards immigration. <br/><br/> Immigrater was built for <a href="http://viacom.com" target="_blank">Viacom</a> and <a href="http://nycmedialab.org">NYC Media Lab</a>',
-          tech:['Node.js', 'Websockets','Javascript', 'HTML', 'CSS','Express.js'],
-          role:['Front-end','Back-end','Concept'],
-          site:{url:'https://immigrater.us', isAlive:false},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/apGaoW5eLO4'}],
-          press:[{title:'',url:''}]
-        },
 
         passtime : {
           title:'Passtime',
@@ -75,6 +64,17 @@ export class App extends React.Component{
           media:[{type:'youtube',url:'https://www.youtube.com/embed/dTa4V8IRT_E'},{type:'youtube',url:'https://www.youtube.com/embed/VtrBiOfD4wY'},{type:'image',url:'/../images/passtime1.jpg'}, {type:'image',url:'/../images/passtime2.png'}],
           press:[{title:'',url:''}]
         },
+        immigrater : {
+          title:'Immigrater',
+          shortDescription:'interactive billboard web app',
+          shortName:'immigrater',
+          description:'An interactive billboard located at the Viacom building in Times Square that allowed anyone to swipe to accept or reject immigrants, tinder style. The project critiqued the banale nature of the US attitude towards immigration. <br/><br/> Immigrater was built for <a href="http://viacom.com" target="_blank">Viacom</a> and <a href="http://nycmedialab.org">NYC Media Lab</a>',
+          tech:['Node.js', 'Websockets','Javascript', 'HTML', 'CSS','Express.js'],
+          role:['Front-end','Back-end','Concept'],
+          site:{url:'https://immigrater.us', isAlive:false},
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/apGaoW5eLO4'}],
+          press:[{title:'',url:''}]
+        },
         twitch : {
           title: 'Twitch Plays Shakespeare',
           shortName:'twitch',
@@ -84,17 +84,6 @@ export class App extends React.Component{
           role:['Front-end','Back-end'],
           site:{url:'twitchplays.com'},
           media:[{type:'image',url:'/../images/twitch2.jpg'},{type:'image',url:'/../images/twitch1.jpg'},{type:'image',url:'/../images/twitch3.jpg'},{type:'image',url:'/../images/twitch4.jpg'},{type:'image',url:'/../images/twitch5.jpg'},{type:'image',url:'/../images/twitch6.jpg'}],
-          press:[{title:'',url:''}]
-        },
-        dimensions : {
-          title:'Dimensions',
-          shortName:'dimensions',
-          shortDescription:'interactive fog installation',
-          description:'An installation where fog is projection mapped to recreate the look and feel of our galaxy. Users can join a mobile web app and leave their own colored stars presented with fiber optic cables and can even control the speed and direction of the fog of stars.',
-          tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS','Arduino','Three.js'],
-          role:['Front-end','Fabrication','Sound Design','Design'],
-          site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}],
           press:[{title:'',url:''}]
         },
 
@@ -110,15 +99,28 @@ export class App extends React.Component{
           press:[{title:'',url:''}]
         },
 
-        haptec : {
-          title:'Haptec',
-          shortName:'haptec',
-          shortDescription:'bike navigation hardware',
-          description:'An integrated system for bicycle navigation which allows a cyclist to intuitively feel their orientation to magnetic North, or a destination-beacon,  with vibration motors in the handles and an LED module to optimize bike journey safety, efficiency and freedom.',
-          tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js','Arduino', 'Circuitry','Cordova'],
-          role:['Front-end','Back-end','App Development','Fabrication','Design','Concept','Sensors','Product','Business'],
-          site: {url:'https://haptec.io',isAlive:false},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/MspImczjQ5Q'}],
+        magic : {
+          title:'Magic is Real',
+          shortName:'magic',
+          shortDescription:'music performance and software',
+          description:'A performance piece showcasing a 7 episode interactive music app that animates a story of a girl who finds many pieces. <br/><br/> This recording was performed at SXSW 2016.',
+          tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],
+          role:['Front-end','Back-end','Design','Concept','Story','Music','Sound Design','Performance'],
+          site:{},
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/8ki_Bk6EPcw'}],
+          press:[{title:'',url:''}]
+        },
+
+
+        glitch : {
+          title:'Glitch the World',
+          shortName:'glitch',
+          shortDescription:'interactive cinema web app',
+          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.<br/><br/> Glitch the World was built with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>.',
+          tech:['Touchdesigner','Websockets','Python', 'Node.js', 'Javascript', 'HTML', 'CSS'],
+          role:['Front-end','Back-end','Design','Story', 'Concept'],
+          site:{},
+          media:[{type:'youtube',url:'https://youtube.com/embed/7HcznestTHI'}],
           press:[{title:'',url:''}]
         },
 
@@ -134,40 +136,6 @@ export class App extends React.Component{
           press:[{title:'',url:''}]
         },
 
-        glitch : {
-          title:'Glitch the World',
-          shortName:'glitch',
-          shortDescription:'interactive cinema web app',
-          description:'An in-person interactive storytelling experience about a young girl trying to break out of a digital world, losing her sense of reality along the way. <br/><br/> The audience joined a mobile web app that was timed with the main story to chat with the characters in the story, get additional sounds, animation, and story, play games to help push the narrative forward, and explore a world map during intermission.<br/><br/> Glitch the World was built with support from <a href="https://research.google.com/" target="_blank">Research at Google</a>.',
-          tech:['Touchdesigner','Websockets','Python', 'Node.js', 'Javascript', 'HTML', 'CSS'],
-          role:['Front-end','Back-end','Design','Story', 'Concept'],
-          site:{},
-          media:[{type:'youtube',url:'https://youtube.com/embed/7HcznestTHI'}],
-          press:[{title:'',url:''}]
-        },
-
-        magic : {
-          title:'Magic is Real',
-          shortName:'magic',
-          shortDescription:'music performance and software',
-          description:'A performance piece showcasing a 7 episode interactive music app that animates a story of a girl who finds many pieces. <br/><br/> This recording was performed at SXSW 2016.',
-          tech:['Node.js', 'Websockets','Javascript', 'Touchdesigner','Python','HTML', 'CSS'],
-          role:['Front-end','Back-end','Design','Concept','Story','Music','Sound Design','Performance'],
-          site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/8ki_Bk6EPcw'}],
-          press:[{title:'',url:''}]
-        },
-        glove : {
-          title:'Glove Phone',
-          shortName:'glove',
-          shortDescription:'connected glove',
-          description:'This gestural phone was built right into a glove that could be worn. Speed dial your favorites by tapping your thumb to your index, middle or ring finger. To end a call tap your thumb to the top of your pinky. You also get haptic notification when you receive a call. To answer just tap your thumb to your pinky.',
-          tech:['Arduino', 'Circuitry','Fona Board'],
-          role:['Code','Fabrication','Design','Concept','Sensors'],
-          site:{},
-          media:[{type:'youtube',url:'https://www.youtube.com/embed/Fj5yJmoLfZg'},{type:'image',url:'/../images/glove-phone1.jpg'},{type:'image',url:'/../images/glove-phone2.jpg'},{type:'image',url:'/../images/glove-phone3.jpg'}],
-          press:[{title:'',url:''}]
-        },
         emoji : {
           title:'Emoji Dance',
           shortName:'emoji',
@@ -177,6 +145,42 @@ export class App extends React.Component{
           role:['Front-end','Design','Concept'],
           site:{url:'http://emoji.magicisreal.net',alive:false},
           media:[{type:'image',url:'/../images/emoji-gif.gif'}],
+          press:[{title:'',url:''}]
+        },
+
+        dimensions : {
+          title:'Dimensions',
+          shortName:'dimensions',
+          shortDescription:'interactive fog installation',
+          description:'An installation where fog is projection mapped to recreate the look and feel of our galaxy. Users can join a mobile web app and leave their own colored stars presented with fiber optic cables and can even control the speed and direction of the fog of stars.',
+          tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS','Arduino','Three.js'],
+          role:['Front-end','Fabrication','Sound Design','Design'],
+          site:{},
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/JDO-xQSmC8A'}],
+          press:[{title:'',url:''}]
+        },
+
+        haptec : {
+          title:'Haptec',
+          shortName:'haptec',
+          shortDescription:'bike navigation hardware',
+          description:'An integrated system for bicycle navigation which allows a cyclist to intuitively feel their orientation to magnetic North, or a destination-beacon,  with vibration motors in the handles and an LED module to optimize bike journey safety, efficiency and freedom.',
+          tech:['Node.js', 'Websockets', 'Javascript', 'HTML', 'CSS', 'Express.js','Arduino', 'Circuitry','Cordova'],
+          role:['Front-end','Back-end','App Development','Fabrication','Design','Concept','Sensors','Product','Business'],
+          site: {url:'https://haptec.io',isAlive:false},
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/MspImczjQ5Q'}],
+          press:[{title:'',url:''}]
+        },
+
+        glove : {
+          title:'Glove Phone',
+          shortName:'glove',
+          shortDescription:'connected glove',
+          description:'This gestural phone was built right into a glove that could be worn. Speed dial your favorites by tapping your thumb to your index, middle or ring finger. To end a call tap your thumb to the top of your pinky. You also get haptic notification when you receive a call. To answer just tap your thumb to your pinky.',
+          tech:['Arduino', 'Circuitry','Fona Board'],
+          role:['Code','Fabrication','Design','Concept','Sensors'],
+          site:{},
+          media:[{type:'youtube',url:'https://www.youtube.com/embed/Fj5yJmoLfZg'},{type:'image',url:'/../images/glove-phone1.jpg'},{type:'image',url:'/../images/glove-phone2.jpg'},{type:'image',url:'/../images/glove-phone3.jpg'}],
           press:[{title:'',url:''}]
         }
         // ,
